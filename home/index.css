@@ -8,27 +8,29 @@ body{
     font-family: georgia;
     background-color: aliceblue;
     color: #000000;
+    font-size: 1rem;
 }
 
 header{
     background-color: #dc1313;
-    padding: 10px 20px;
+    padding: 0.5rem 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    height: 50px;
-    width: 60px;
+    height: 3.5rem;
+    width: 4rem;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 2.5vw;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 nav a:hover {
@@ -37,30 +39,32 @@ nav a:hover {
 .search-container {
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.3rem;
     background-color: #fff;
-    padding: 5px;
+    padding: 0.4rem;
     position: relative;
+    width: 100%;
 }
 
 .search-input {
-    padding: 5px;
+    padding: 0.5em;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
     outline: none;
+    width: 80%;
 }
 
 .search-button {
     background-color: #d6001c;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     color: white;
     cursor: pointer;
-    padding: 10px 15px;
-    font-size: 16px;
-    margin-left: 10px;
+    padding: 0.8rem 1.5vw;
+    font-size: 0.9rem;
+    margin-left: 1vw;
 }
 
 .search-button:hover {
@@ -69,35 +73,44 @@ nav a:hover {
 
 
 main {
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
+    min-height: calc(100vh - 100px);
+}
+
+main img {
+    width: 100%; 
+    height: auto; 
+    max-width: 100%; 
 }
 
 .intro {
     background-color: #fefefe;
-    padding: 50px 20px;
-    border-radius: 8px;
-    box-shadow: o 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5vh 2vw;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .intro h1 {
-    font-size: 2.5em;
+    font-size: 3vw;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .intro p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    margin-bottom: 3rem;
 }
 
 .cta-button {
     background-color: #dc1313;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 1rem 2vw;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 1rem;
 }
 
 .cta-button:hover{
@@ -108,21 +121,23 @@ footer {
     background-color: #232323;
     color: #ffffff;
     text-align: center;
-    padding: 5px;
-    position: fixed;
+    padding: 0.5rem;
+    position: relative;
     width: 100%;
     bottom: 0;
+    font-size: 0.9em;
+    margin-top: 20px
 }
 
 @media (max-width: 1024px) {
     header {
         flex-direction: column;
-        padding: 15px;
+        padding: 2rem;
     }
 
     nav a {
         margin-left: 10px;
-        font-size: 14px;
+        font-size: 2.5vw;
     }
 
     .intro {
@@ -138,73 +153,60 @@ footer {
     }
 
     .cta-button {
-        padding: 8px 16px;
-        font-size: 14px;
+        padding: 1rem 1.5vw;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 10px;
+        padding: 1.5rem;
     }
 
     nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 10px;
     }
 
     nav a {
         margin-left: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
+        margin-bottom: 1vh;
+        font-size: 0.9rem;
     }
 
     .logo img {
-        height: 40px;
-        width: 50px;
+        height: 4vh;
+        width: 5vw;
     }
 
     .search-container {
-        width: 100%;
-        padding: 5px;
-        margin-top: 10px;
+        width: 90%;
     }
 
     .search-input {
-        width: 80%;
+        width: 70%;
     }
 
     .search-button {
-        width: 100%;
-        padding: 8px;
-        margin-left: 0;
+        width: 25%;
+        padding: 0.8rem;
     }
 
     main {
-        padding: 10px;
-    }
-
-    .intro {
-        padding: 30px 10px;
+        padding: 1rem;
     }
 
     .intro h1 {
-        font-size: 1.8em;
+        font-size: 2rem;
     }
 
     .intro p {
-        font-size: 1em;
-    }
-
-    .cta-button {
-        padding: 8px 16px;
-        font-size: 12px;
+        font-size: 1.2rem;
     }
 
     footer {
-        padding: 10px;
+        padding: 0.8rem;
     }
 }
