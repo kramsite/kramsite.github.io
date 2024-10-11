@@ -2,168 +2,19 @@
 <html lang="pt-BR"> 
 <head>
      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Sobre Nós Empresa X</title>
-       <style>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Sobre Nós Empresa X</title>
+     <link rel="stylesheet" href="sobre.css">
 
-       *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body{
-            font-family: georgia;
-            background-color: aliceblue;
-            color: #000000;
-            padding-bottom: 60px;
-        }
-
-        header{
-            background-color: #dc1313;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo img {
-           height: 50px;
-           width: 60px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        header h1 {
-            font-size: 3rem;
-           margin: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        } 
-
-        .about-us-section { 
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .about-us-section h2 { 
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color:#d40c0c;
-        }
-
-        .about-content {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .about-us-section p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #000000; 
-        }
-
-        .about-us-section img {
-            margin-right: 20px;
-            border-radius: 8px;
-            max-width: 400px;
-            height: auto;
-        } 
-
-        .text-content {
-            flex: 1;
-        }
-
-        .mission-vision-values {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        } 
-
-        .mission-vision-values div {
-            padding: 30px;
-            background-color: #feecec;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .mission-vision-values div h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #b70303;
-        }
-
-        .mission-vision-values div p {
-            font-size: 1rem;
-            color: #534343;
-        }
-        
-
-        footer {
-         background-color: #232323;
-         color: #ffffff;
-         text-align: center;
-         padding: 5px;
-         position: fixed;
-         bottom: -60px;
-         width: 100%;
-         bottom: 0;
-        }
-
-        footer.show {
-            bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .mission-vision-values {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .mission-vision-values div {
-                padding: 20px;
-                width: 100%;
-            }
-        }
-
-
-
-</style>
 </head>
 
 <body>
     <header>
             <div class="logo">
-            <a href="home.html"><img src="../img/logo/logo2.png" alt="Logo">                  
+            <a href="../home/index.html"><img src="../img/logo/logo2.png" alt="Logo">                  
             </div>
             <nav>
-                <a href="../home/home.html">Home</a>
+                <a href="../home/index.html">Home</a>
                 <a href="../perfil/Perfil.html">Perfil</a>
                 <a href="../login/Loginkram.html">Login</a>
                 <a href="../orcamento/orcamento.html">Orçamento</a>

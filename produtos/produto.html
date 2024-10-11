@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="produto2.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="../home/index.html"><img src="../img/logo/logo2.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <a href="../sobre/sobre.html">Sobre</a>
+            <a href="../perfil/Perfil.html">Perfil</a>
+            <a href="../home/index.html">Home</a>
+            <a href="../orcamento/orcamento.html">Orçamento</a>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">🔍</button>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <h1>Categorias</h1>
+            <p>Mais facilidade para encontrar o que deseja.</p>
+        </section>
+
+        <div class="add-category-button-container">
+            <button id="add-category-button" class="add-category-button">+</button>
+            <div id="new-category-inputs">
+                <input type="text" id="category-name" placeholder="Nome da Categoria" required>
+                <input type="file" id="category-image" accept="image/*">
+                <button id="submit-category-button" class="submit-button">✔</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="./acessorios/acessorios.html" class="botao" style="background-image: url(../img/produtos/acessocrio.marigata.jpg);">Acessórios</a>
+            <a href="./armarinho/armarinho.html" class="botao" style="background-image: url(../img/produtos/armarinho.jpg);">Armarinho</a>
+            <a href="./pescaria/pescaria.html" class="botao" style="background-image: url(../img/produtos/pesca.jpg);">Artigos para pesca</a>
+            <a href="brinquedo.html" class="botao" style="background-image: url(../img/produtos/brinquedo.jpg);">Brinquedos</a>
+            <a href="cosmesticos.html" class="botao" style="background-image: url(../img/produtos/cosmesticos.jpg);">Cosméticos</a>
+            <a href="contrucao.html" class="botao" style="background-image: url(../img/produtos/contrução.jpg);">Materiais de construção</a>
+            <a href="escola.html" class="botao" style="background-image: url(../img/produtos/escola.jpg);">Materiais escolares</a>
+            <a href="limpeza.html" class="botao" style="background-image: url(../img/produtos/limpeza.jpg);">Produtos de limpeza</a>
+            <a href="pet.html" class="botao" style="background-image: url(../img/produtos/pet.jpg);">Produtos para pet</a>
+            <a href="./roupas/roupas.html" class="botao" style="background-image: url(../img/produtos/roupa.jpg);">Roupas</a>
+            <a href="./eletronicos/eletronicos.html" class="botao" style="background-image: url(../img/produtos/eletronicos.jpg);">Eletrônicos</a>
+            <a href="./eletrodomesticos/eletrodoméstico.html" class="botao" style="background-image: url(../img/produtos/eletrodomestico.jpeg);">Eletrodomésticos</a>
+        </div>
+    </main>
+    
+    <footer>
+        &copy; 2024 KRAM. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        document.getElementById('add-category-button').addEventListener('click', function() {
+            const inputs = document.getElementById('new-category-inputs');
+            inputs.style.display = inputs.style.display === 'none' || inputs.style.display === '' ? 'flex' : 'none';
+        });
+
+        document.getElementById('submit-category-button').addEventListener('click', function() {
+            const nameInput = document.getElementById('category-name');
+            const fileInput = document.getElementById('category-image');
+
+            if (nameInput.value && fileInput.files[0]) {
+                const imgSrc = URL.createObjectURL(fileInput.files[0]);
+
+                // Create a new link element for the category
+                const newCategoryLink = document.createElement('a');
+                newCategoryLink.href = "#";
+                newCategoryLink.target = "_blank";
+                newCategoryLink.className = 'botao';
+                newCategoryLink.style.backgroundImage = `url(${imgSrc})`;
+                newCategoryLink.textContent = nameInput.value;
+
+                // Add the new category to the container
+                const container = document.querySelector('.container');
+                container.appendChild(newCategoryLink);
+
+                // Clear the input fields
+                nameInput.value = '';
+                fileInput.value = '';
+
+                // Hide the input fields after adding the category
+                document.getElementById('new-category-inputs').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
