@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia;
+    background-color: #fefefe;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #dc1313;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+    width: 60px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 5px;
+    position: relative; /* Adicionado para o posicionamento do contêiner de sugestões */
+}
+
+.search-input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #d6001c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: #ff0707;
+}
+
+
+main {
+    padding: 125px;
+    text-align: center;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.login-form form {
+    text-align: left;
+}
+
+.login-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.login-form button:hover {
+    background-color: #cc0000;
+}
+
+.login-form p {
+    margin-top: 10px;
+}
+
+.login-form a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #232323;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

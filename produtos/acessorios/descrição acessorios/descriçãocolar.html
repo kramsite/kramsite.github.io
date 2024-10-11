@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento</title>
+    <style>
+        /* Estilos conforme fornecido... */
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="../img/logo/logo2.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <a href="../sobre/sobre.html">Sobre</a>
+            <a href="../perfil/Perfil.html">Perfil</a>
+            <a href="../home/home.html">Home</a>
+            <a href="../produtos/produtos.html">Produtos</a>
+        </nav>
+    </header>
+
+    <div class="orcamento">
+        <h2>Orçamento</h2>
+        <div id="items-container"></div>
+        
+        <div class="item">
+            <select id="item-select" onchange="addItem()">
+                <option value="">Selecione um item</option>
+                <optgroup label="Acessórios">
+                    <option value="20.00">Arquinho</option>
+                    <option value="30.00">Balaclava</option>
+                    <!-- (outros itens conforme fornecido...) -->
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="total">Total: R$ <span id="total">0.00</span></div>
+        <button onclick="finalizarOrcamento()">Finalizar Orçamento</button>
+    </div>
+
+    <script>
+        let totalValue = 0;
+
+        function addItem() {
+            const select = document.getElementById('item-select');
+            const selectedOption = select.options[select.selectedIndex];
+
+            if (selectedOption.value) {
+                const itemValue = parseFloat(selectedOption.value);
+                totalValue += itemValue;
+
+                const container = document.getElementById('items-container');
+                const newItemSection = document.createElement('div');
+                newItemSection.className = 'item-section';
+                newItemSection.innerHTML = `
+                    <div class="item">
+                        <input type="text" value="${selectedOption.text}" readonly>
+                        <span class="item-price">R$ ${itemValue.toFixed(2)}</span>
+                        <button class="remove-btn" onclick="removeItem(this, ${itemValue})">Remover</button>
+                    </div>
+                `;
+                container.appendChild(newItemSection);
+
+                document.getElementById('total').innerText = totalValue.toFixed(2);
+                select.selectedIndex = 0;
+            } else {
+                alert("Por favor, selecione um item.");
+            }
+        }
+
+        function removeItem(button, itemValue) {
+            const itemDiv = button.closest('.item-section');
+            itemDiv.remove();
+            totalValue -= itemValue;
+            document.getElementById('total').innerText = totalValue.toFixed(2);
+        }
+
+        function finalizarOrcamento() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // (Código para gerar PDF...)
+
+            // Armazenar mensagem no localStorage
+            const message = `Orçamento finalizado com total de R$ ${totalValue.toFixed(2)} em ${new Date().toLocaleDateString()}`;
+            localStorage.setItem('orcamentoMessage', message);
+
+            doc.save('orcamento.pdf');
+        }
+    </script>
+
+    <footer>
+        &copy; 2024 KRAM. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

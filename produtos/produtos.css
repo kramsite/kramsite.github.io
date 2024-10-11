@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'georgia';
+    background-color: #ffffff;
+    color: #333333;
+}
+
+header {
+    background-color: #dc1313;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+    width: 60px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-left: 20px;
+}
+
+.search-container:focus-within {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    flex: 1;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-button {
+    background-color: #d6001c;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.search-button:hover {
+    background-color: #ff0707;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.intro {
+    background-color: #fefefe;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: o 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.intro h1 {
+    font-size: 2.5em;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.botao1 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/acessocrio.marigata.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao2 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/autopeças.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao3 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/armarinho.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao4 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/pesca.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao5 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/brinquedo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao6 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/cosmesticos.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.botao7 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/contrução.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao8 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/escola.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao9 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/limpeza.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao10 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/pet.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.botao11 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #dc1313;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/roupa.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao12 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #ffffff;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/eletronicos.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao13 {
+    width: 295px;
+    height: 200px;
+    font-size: 25px;
+    background-color: #ffffff;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/produtos/eletrodomestico.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.botao:hover {
+    background-color: #c11010;
+}
+
+footer {
+    background-color: #232323;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

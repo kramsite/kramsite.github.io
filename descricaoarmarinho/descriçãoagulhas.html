@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Página de Descrição</title>
+    <link rel="stylesheet" href="descriçãoagulha.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #dc1313;
+            padding: 10px 20px;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .produto {
+            display: flex;
+            align-items: flex-start;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .produto img {
+            max-width: 350px;
+            margin-right: 20px;
+        }
+
+        .produto-info {
+            text-align: left;
+        }
+
+        button {
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #B22222;
+        }
+
+        #trocarImagemBtn {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .editar-info {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .editar-info input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .trocar-imagem {
+            margin-bottom: 10px;
+        }
+
+        .estoque-controls {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            justify-content: flex-start;
+        }
+
+        .estoque-controls button {
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+
+        .preco-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #editarPrecoBtn {
+            padding: 5px 8px;
+            font-size: 12px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="../img/logo/logo2.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <a href="../perfil/Perfil.html">Perfil</a>
+            <a href="../home/home.html">Home</a>
+            <a href="../orcamento/orcamento.html">Orçamento</a>
+            <a href="../login/Loginkram.html">Login</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Descrição do Produto</h1>
+        <div class="produto">
+            <div class="produto-info">
+                <div class="trocar-imagem">
+                    <input type="file" id="novaImagemInput" accept="image/*" style="display: none;">
+                    <button id="trocarImagemBtn">Trocar Imagem</button>
+                </div>
+                <img id="imagemProduto" src="../img/armarinho/agulhas.jpg" alt="imagem do produto">
+            </div>
+            <div class="produto-info">
+                <h2 id="nomeProduto">Agulhas de Costura</h2>
+                <p id="descricaoProduto">Agulhas de alta qualidade</p>
+                <ul id="caracteristicas">
+                    <li id="caracteristica1">Aço inox</li>
+                    <li id="caracteristica2">De 15 a 30cm</li>
+                </ul>
+                <div class="preco-container">
+                    <p id="precoProduto">Preço: R$ <span id="precoValor">12,00</span></p>
+                    <input type="text" id="novoPrecoInput" placeholder="Novo Preço" style="display: none; width: 60px;">
+                    <button id="editarPrecoBtn">Editar</button>
+                </div>
+                <div class="estoque-controls">
+                    <button id="menosBtn">-</button>
+                    <p id="estoque">Estoque disponível: <span id="quantidade">10</span></p>
+                    <button id="maisBtn">+</button>
+                </div>
+                <button id="editarBtn">Editar Informações</button>
+                <button id="salvarAdicionarBtn" style="display: none;">Salvar</button>
+                <button id="salvarRetirarBtn" style="display: none;">Salvar</button>
+                <p id="mensagem"></p>
+
+                <div class="editar-info" id="editarInfo">
+                    <input type="text" id="novaImagem" placeholder="URL da nova imagem (opcional)">
+                    <input type="text" id="novoNome" placeholder="Novo Nome">
+                    <input type="text" id="novaDescricao" placeholder="Nova Descrição">
+                    <input type="text" id="novaCaracteristica1" placeholder="Nova Característica 1">
+                    <input type="text" id="novaCaracteristica2" placeholder="Nova Característica 2">
+                    <button id="salvarEdicoesBtn">Salvar Edições</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let quantidadeEstoque = 10;
+
+        function atualizarEstoque() {
+            document.getElementById("quantidade").textContent = quantidadeEstoque;
+        }
+
+        document.getElementById("maisBtn").addEventListener("click", function() {
+            quantidadeEstoque++;
+            atualizarEstoque();
+            document.getElementById("salvarAdicionarBtn").style.display = "inline-block";
+        });
+
+        document.getElementById("menosBtn").addEventListener("click", function() {
+            if (quantidadeEstoque > 0) {
+                quantidadeEstoque--;
+                atualizarEstoque();
+                document.getElementById("salvarRetirarBtn").style.display = "inline-block";
+            }
+        });
+
+        document.getElementById("editarBtn").addEventListener("click", function() {
+            const editarInfo = document.getElementById("editarInfo");
+            editarInfo.style.display = "block";
+            document.getElementById("novaImagemInput").value = '';
+            document.getElementById("novaImagem").value = '';
+            document.getElementById("novoNome").value = document.getElementById("nomeProduto").textContent;
+            document.getElementById("novaDescricao").value = document.getElementById("descricaoProduto").textContent;
+            document.getElementById("novaCaracteristica1").value = document.getElementById("caracteristica1").textContent;
+            document.getElementById("novaCaracteristica2").value = document.getElementById("caracteristica2").textContent;
+        });
+
+        document.getElementById("trocarImagemBtn").addEventListener("click", function() {
+            document.getElementById("novaImagemInput").click();
+        });
+
+        document.getElementById("novaImagemInput").addEventListener("change", function() {
+            const arquivo = this.files[0];
+            if (arquivo) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("imagemProduto").src = e.target.result;
+                }
+                reader.readAsDataURL(arquivo);
+            }
+        });
+
+        document.getElementById("editarPrecoBtn").addEventListener("click", function() {
+            const novoPrecoInput = document.getElementById("novoPrecoInput");
+            if (novoPrecoInput.style.display === "none") {
+                novoPrecoInput.style.display = "inline";
+                novoPrecoInput.value = document.getElementById("precoValor").textContent;
+                novoPrecoInput.focus();
+                this.textContent = "Salvar";
+            } else {
+
+                const novoPreco = novoPrecoInput.value;
+                document.getElementById("precoValor").textContent = novoPreco;
+                novoPrecoInput.style.display = "none";
+                this.textContent = "Editar";
+            }
+        });
+
+        document.getElementById("salvarEdicoesBtn").addEventListener("click", function() {
+            const novaImagemURL = document.getElementById("novaImagem").value;
+            const novoNome = document.getElementById("novoNome").value;
+            const novaDescricao = document.getElementById("novaDescricao").value;
+            const novaCaracteristica1 = document.getElementById("novaCaracteristica1").value;
+            const novaCaracteristica2 = document.getElementById("novaCaracteristica2").value;
+
+            if (novaImagemURL) {
+                document.getElementById("imagemProduto").src = novaImagemURL;
+            }
+
+            document.getElementById("nomeProduto").textContent = novoNome;
+            document.getElementById("descricaoProduto").textContent = novaDescricao;
+            document.getElementById("caracteristica1").textContent = novaCaracteristica1;
+            document.getElementById("caracteristica2").textContent = novaCaracteristica2;
+
+            document.getElementById("novaImagemInput").value = '';
+            document.getElementById("novaImagem").value = '';
+            document.getElementById("novoNome").value = '';
+            document.getElementById("novaDescricao").value = '';
+            document.getElementById("novaCaracteristica1").value = '';
+            document.getElementById("novaCaracteristica2").value = '';
+            document.getElementById("editarInfo").style.display = "none";
+        });
+
+        document.getElementById("salvarAdicionarBtn").addEventListener("click", function() {
+            const mensagem = document.getElementById("mensagem");
+            mensagem.textContent = "";
+            document.getElementById("salvarAdicionarBtn").style.display = "none";
+        });
+
+        document.getElementById("salvarRetirarBtn").addEventListener("click", function() {
+            const mensagem = document.getElementById("mensagem");
+            mensagem.textContent = "";
+            document.getElementById("salvarRetirarBtn").style.display = "none";
+        });
+    </script>
+</body>
+</html>

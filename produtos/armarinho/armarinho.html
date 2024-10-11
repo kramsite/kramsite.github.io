@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+    <link rel="stylesheet" href="../armarinho/armarinho.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="../../img/logo/logo2.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="../../perfil/Perfil.html">Perfil</a>
+            <a href="../../orcamento/orcamento.html">Orçamento</a>
+            <a href="../produtos.html">Produtos</a>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-list">
+            <article class="product">
+                <img src="../../img/armarinho/agulhas.jpg" alt="Produto 1">
+                <h2>agulhas</h2>
+                <p>Descrição breve do Produto 1. Um ótimo produto que você vai adorar!</p>
+                <a href="../../descricaoarmarinho/descriçãoagulhas.html"><button>Adicionar ao Carrinho</button>
+            </article>
+            <article class="product">
+                <img src="../../img/armarinho/botoes.jpg" alt="Produto 2">
+                <h2>botões</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãobotão.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/envelope.jpg" alt="Produto 3">
+                <h2>envelope</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/fitas.jpg" alt="Produto 4">
+                <h2>fitas</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/linha.jpg" alt="Produto 5">
+                <h2>linhas</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/linhas pra borda.jpg" alt="Produto 4">
+                <h2>linha para borda</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/linhasdecroche.jpg" alt="Produto 4">
+                <h2>linahs para croche</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/papeis.jpg" alt="Produto 4">
+                <h2>papeis</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/papel de presente.jpg" alt="Produto 4">
+                <h2>papel de presente</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/tecido.jpg" alt="Produto 4">
+                <h2>tecido</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="../../img/armarinho/ziper.jpg" alt="Produto 4">
+                <h2>ziper</h2>
+                <p>Descrição breve do Produto 2. Outro produto incrível para você!</p>
+                <a href="../html/descriçãocolar.html"><button>Adicionar ao Carrinho</button>
+            </article>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 KRAM. Todos os direitos reservados.
+    </footer>
+        
+        <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.querySelector('.search-input');
+            const searchButton = document.querySelector('.search-button');
+
+            searchButton.addEventListener('click', function () {
+                const searchTerm = searchInput.value.toLowerCase();
+                const products = document.querySelectorAll('.product');
+
+                let found = false;
+
+                products.forEach(product => {
+                    const title = product.querySelector('h2').textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        product.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        product.style.border = '2px solid red';
+                        found = true;
+                    } else {
+                        product.style.border = 'none';
+                    }
+                });
+
+                if (!found) {
+                    alert('Produto não encontrado');
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!searchInput.contains(event.target) && !searchButton.contains(event.target)) {
+                    searchInput.value = '';
+                }
+                {}
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.querySelector('.search-input');
+            const searchButton = document.querySelector('.search-button');
+
+            searchButton.addEventListener('click', function () {
+                const searchTerm = searchInput.value.toLowerCase();
+                const products = document.querySelectorAll('.product');
+
+                let found = false;
+
+                products.forEach(product => {
+                    const title = product.querySelector('h2').textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        product.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        product.style.border = '2px solid red';
+                        found = true;
+                    } else {
+                        product.style.border = '1px solid #ddd'; // Restauro da borda
+                    }
+                });
+
+                if (!found) {
+                    alert('Produto não encontrado');
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!searchInput.contains(event.target) && !searchButton.contains(event.target)) {
+                    searchInput.value = '';
+                }
+            });
+        })
+        </script>
+
+</html>

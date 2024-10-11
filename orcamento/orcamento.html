@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento</title>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: 'georgia';
+        background-color: #ffffff;
+        color: #333333;
+    }
+
+    header{
+        background-color: #dc1313;
+        color: #ffffff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo img {
+        height: 50px;
+        width: 60px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .orcamento {
+        border: 1px solid #ced4da;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    } 
+
+    h2 {
+        color: #343a40;
+    }
+
+    #items-container {
+        max-height: 200px;
+        overflow-y: auto;
+        margin-bottom: 15px;
+    }
+
+    .item-section {
+        border: 1px solid #ced4da;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: #e9ecef;
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .item-price {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #007bff;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    select, input[type="number"] {
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        background-color: #e9ecef;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #dd0000;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #cb1d1d;
+    }
+
+    .total {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #28a745;
+    }
+
+    .remove-btn {
+        margin-left: 10px;
+        background-color: #dc3545;
+    }
+
+    .remove-btn:hover {
+        background-color: #c82333;
+    }
+
+    footer {
+    background-color: #232323;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+</style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="../img/logo/logo2.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="../sobre/sobre.html">Sobre</a>
+            <a href="../perfil/Perfil.html">Perfil</a>
+            <a href="../home/home.html">Home</a>
+            <a href="../produtos/produtos.html">Produtos</a>
+        </nav>
+    </header>
+
+<div class="orcamento">
+    <h2>Orçamento</h2>
+    <div id="items-container"></div>
+    
+    <div class="item">
+        <select id="item-select" onchange="addItem()">
+            <option value="">Selecione um item</option>
+            <optgroup label="Acessórios">
+                <option value="20.00">Arquinho</option>
+                <option value="30.00">Balaclava</option>
+                <option value="15.00">Bandana</option>
+                <option value="25.00">Berloque</option>
+                <option value="30.00">Boné</option>
+                <option value="30.00">Bucket Hat</option>
+                <option value="80.00">Bolsa</option>
+                <option value="25.00">Cachecol</option>
+                <option value="50.00">Cinto</option>
+                <option value="40.00">Colar</option>
+                <option value="30.00">Gravata</option>
+                <option value="25.00">Gorro</option>
+                <option value="15.00">Leque</option>
+                <option value="15.00">Máscara</option>
+                <option value="40.00">Medalhão</option>
+                <option value="50.00">Pochete</option>
+                <option value="30.00">Piercing</option>
+                <option value="20.00">Presilha</option>
+                <option value="100.00">Relógio</option>
+                <option value="50.00">Tornozeleira</option>
+                <option value="20.00">Turbante</option>
+                <option value="20.00">Fita adesiva</option>
+                <option value="35.00">Tesoura</option>
+                <option value="80.00">Óculos</option>
+            </optgroup>
+            <optgroup label="Pescaria">
+                <option value="7.90">Anzol Bronze</option>
+                <option value="8.90">Anzol Ouro</option>
+                <option value="9.90">Anzol Prata</option>
+                <option value="4.90">Chumbada Extra</option>
+                <option value="5.00">Chumbada Leve</option>
+                <option value="5.50">Chumbada Pesada</option>
+                <option value="10.90">Isca Artificial</option>
+                <option value="12.90">Isca Natural</option>
+                <option value="9.90">Isca Premium</option>
+                <option value="5.50">Linha Fina</option>
+                <option value="6.50">Linha Forte</option>
+                <option value="4.90">Linha Ultra</option>
+                <option value="49.90">Mochila Aventura</option>
+                <option value="39.90">Mochila Explorer</option>
+                <option value="59.90">Rede Grande</option>
+                <option value="49.90">Rede Média</option>
+                <option value="39.90">Rede Pequena</option>
+                <option value="79.90">Vara de Pesca Avançada</option>
+                <option value="89.90">Vara de Pesca Clássica</option>
+                <option value="69.90">Vara de Pesca Elite</option>
+            </optgroup>
+            <optgroup label="Armarinho">
+                <option value="15.00">Agulhas</option>
+                <option value="5.00">Botões</option>
+                <option value="12.00">Envelope</option>
+                <option value="18.00">Fitas</option>
+                <option value="10.00">Linhas</option>
+                <option value="25.00">Linha para borda</option>
+                <option value="30.00">Linhas para crochê</option>
+                <option value="7.00">Papéis</option>
+                <option value="10.00">Papel de presente</option>
+                <option value="40.00">Tecidos</option>
+                <option value="15.00">Zíper</option>
+            </optgroup>
+            <optgroup label="Eletrodomésticos">
+                <option value="69.90">Batedeira Arno</option>
+                <option value="99.90">Batedeira Black & Decker</option>
+                <option value="89.90">Batedeira Cadence</option>
+                <option value="79.90">Batedeira Philips Walita</option>
+                <option value="49.90">Ferro de Passar Black & Decker</option>
+                <option value="59.90">Ferro de Passar Electrolux</option>
+                <option value="199.90">Fogão 4 Bocas Atlas</option>
+                <option value="249.90">Fogão 4 Bocas Brastemp</option>
+                <option value="299.90">Fogão 4 Bocas Consul</option>
+                <option value="1299.90">Geladeira Brastemp Inverse</option>
+                <option value="1199.90">Geladeira Consul 2 Portas</option>
+                <option value="1099.90">Geladeira Electrolux Frost Free</option>
+                <option value="79.90">Liquidificador Arno</option>
+                <option value="69.90">Liquidificador Cadence</option>
+                <option value="59.90">Liquidificador Mallory</option>
+                <option value="89.90">Liquidificador Philips Walita</option>
+                <option value="249.90">Micro-ondas Brastemp</option>
+                <option value="199.90">Micro-ondas Consul</option>
+                <option value="299.90">Micro-ondas Electrolux</option>
+                <option value="229.90">Micro-ondas Panasonic</option>
+                <option value="1399.90">TV LED 43" LG</option>
+                <option value="1499.90">TV LED 50" Samsung</option>
+                <option value="1229.90">TV LED 55" Philips</option>
+            </optgroup>
+            <optgroup label="Roupas">
+                <option value="59.90">Bata Floral</option>
+                <option value="39.90">Bermuda de Praia</option>
+                <option value="129.90">Blazer Casual</option>
+                <option value="49.90">Blusa Cropped</option>
+                <option value="79.90">Blusa de Frio Unissex</option>
+                <option value="49.90">Camiseta Básica Masculina</option>
+                <option value="59.90">Camiseta com Capuz</option>
+                <option value="49.90">Camiseta de Banda</option>
+                <option value="39.90">Camiseta Estampada</option>
+                <option value="89.90">Camisa de Linho</option>
+                <option value="79.90">Camisa Polo</option>
+                <option value="69.90">Calça Jogger Masculina</option>
+                <option value="59.90">Calça Legging</option>
+                <option value="99.90">Conjunto Feminino Branco</option>
+                <option value="79.90">Conjunto Feminino Floral</option>
+                <option value="89.90">Conjunto Galinha Pintadinha</option>
+                <option value="99.90">Conjunto de Moletom</option>
+                <option value="199.90">Jaqueta de Couro</option>
+                <option value="109.90">Macacão Estampado</option>
+                <option value="49.90">Pijama Infantil</option>
+                <option value="39.90">Regata Fitness Feminina</option>
+                <option value="49.90">Saia Jeans</option>
+                <option value="69.90">Saia Midi Estampada</option>
+                <option value="59.90">Shorts Jeans Feminino</option>
+                <option value="39.90">Sunga Estampada</option>
+                <option value="39.90">T-shirt Estampada</option>
+                <option value="89.90">Vestido Longo de Verão</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <div class="total">Total: R$ <span id="total">0.00</span></div>
+    <button onclick="finalizarOrcamento()">Finalizar Orçamento</button>
+</div>
+
+<script>
+    let totalValue = 0;
+
+    function addItem() {
+        const select = document.getElementById('item-select');
+        const selectedOption = select.options[select.selectedIndex];
+
+        if (selectedOption.value) {
+            const itemValue = parseFloat(selectedOption.value);
+            totalValue += itemValue;
+
+            const container = document.getElementById('items-container');
+            const newItemSection = document.createElement('div');
+            newItemSection.className = 'item-section';
+            newItemSection.innerHTML = `
+                <div class="item">
+                    <input type="text" value="${selectedOption.text}" readonly>
+                    <span class="item-price">R$ ${itemValue.toFixed(2)}</span>
+                    <button class="remove-btn" onclick="removeItem(this, ${itemValue})">Remover</button>
+                </div>
+            `;
+            container.appendChild(newItemSection);
+
+            document.getElementById('total').innerText = totalValue.toFixed(2);
+
+            select.selectedIndex = 0;
+        } else {
+            alert("Por favor, selecione um item.");
+        }
+    }
+
+    function removeItem(button, itemValue) {
+        const itemDiv = button.closest('.item-section');
+        itemDiv.remove();
+        totalValue -= itemValue;
+        document.getElementById('total').innerText = totalValue.toFixed(2);
+    }
+
+    function finalizarOrcamento() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        doc.setFontSize(14);
+        doc.text("Nome da Empresa", 20, 10);
+        doc.setFontSize(10);
+        doc.text("Endereço da Empresa", 20, 15);
+        doc.text("Telefone: (00) 0000-0000", 20, 20);
+        doc.text("Email: contato@empresa.com", 20, 25);
+        doc.text("===================================", 20, 30);
+
+        doc.setFontSize(20);
+        doc.text("Orçamento Detalhado", 20, 40);
+        doc.setFontSize(12);
+        doc.text("Data: " + new Date().toLocaleDateString(), 20, 50);
+        doc.text("===================================", 20, 55);
+        
+        let y = 60;
+
+        const items = document.querySelectorAll('#items-container .item-section');
+        items.forEach(item => {
+            const description = item.querySelector('input[type="text"]').value;
+            const price = item.querySelector('.item-price').innerText;
+            doc.text(`${description}: ${price}`, 20, y);
+            y += 10;
+        });
+
+        doc.text("===================================", 20, y);
+        y += 10;
+        doc.setFontSize(14);
+        doc.text(`Total: R$ ${totalValue.toFixed(2)}`, 20, y);
+
+        y += 20;
+        doc.setFontSize(10);
+        doc.text("Obrigado por escolher nossos serviços!", 20, y);
+
+        doc.save('orcamento.pdf');
+    }
+</script>
+
+<footer>
+    &copy; 2024 KRAM. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

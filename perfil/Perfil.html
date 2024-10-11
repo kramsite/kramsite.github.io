@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao KRAM</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../home/home.html"><img src="../img/logo/logo2.png" alt="Logo"></a>
+        </div>
+        <h2>Perfil da Empresa</h2>
+        <nav>
+            <a href="../sobre/sobre.html">Sobre</a>
+            <a href="../home/home.html">Home</a>
+            <a href="../orcamento/orcamento.html">Orçamento</a>
+            <a href="../produtos/produtos.html">Produtos</a>     
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <section class="profile-picture-container">
+            <img id="profile-picture" src="../img/default-profile.png" alt="Imagem de Perfil">
+            <input type="file" id="upload-picture" accept="image/*">
+            <label for="upload-picture">Alterar Imagem</label>
+        </section>
+
+        <section class="profile-info">
+            <h2>Informações Pessoais</h2>
+            <div class="info-item">
+                <label>Empresa:</label>
+                <span>nome ficticio</span>
+            </div>
+            <div class="info-item">
+                <label>Email:</label>
+                <span>emaildaempresa@hotmail.com</span>
+            </div>
+            <div class="info-item">
+                <label>Telefone:</label>
+                <span>(00) 0000-0000</span>
+            </div>
+            <div id="orcamento-message" class="info-item" style="margin-top: 20px;">
+                <label>Mensagem do Orçamento:</label>
+                <span id="message-text"></span>
+            </div>
+        </section>
+
+        <section class="delivery-address">
+            <h2>Endereço da Empresa</h2>
+            <div class="info-item">
+                <label>Endereço:</label>
+                <span>Rua Exemplo, 000 - Bairro exemplo</span>
+            </div>
+            <div class="info-item">
+                <label>Cidade:</label>
+                <span>Cuiabá</span>
+            </div>
+            <div class="info-item">
+                <label>CEP:</label>
+                <span>12345-678</span>
+            </div>
+        </section>
+
+        <footer>
+            <a href="edit-profile.html" class="btn-edit">Editar Perfil</a>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('upload-picture').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('profile-picture').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        window.onload = function() {
+            const message = localStorage.getItem('orcamentoMessage');
+            if (message) {
+                document.getElementById('message-text').innerText = message;
+                localStorage.removeItem('orcamentoMessage'); // Limpa a mensagem após exibir
+            } else {
+                document.getElementById('message-text').innerText = 'Nenhuma mensagem de orçamento disponível.';
+            }
+        };
+    </script>
+</body>
+</html>
