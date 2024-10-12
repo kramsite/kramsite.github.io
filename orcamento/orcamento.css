@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: georgia;
+    background-color: aliceblue;
+    color: #000000;
+    font-size: 1rem;
+}
+
+header{
+    background-color: #dc1313;
+    padding: 0.5rem 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 3.5rem;
+    width: 4rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 2.5vw;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    min-height: calc(100vh - 100px);
+}
+
+.orcamento {
+    border: 1px solid #ced4da;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+} 
+
+h2 {
+    color: #343a40;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+#items-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.item-section {
+    border: 1px solid #ced4da;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    background-color: #e9ecef;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-name {
+    flex: 3;
+    text-align: left;
+    font-size: rem;
+    margin-right: 1rem;
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+select, input[type="number"] {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.75rem 1rem;
+    background-color: #dd0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba;
+}
+
+button:hover {
+    background-color: #cb1d1d;
+}
+
+.total {
+    margin-top: 2rem;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #28a745;
+}
+
+.remove-btn {
+    margin-left: 0.5rem; 
+    background-color: #dc3545;
+    padding: 0.4rem 0.6rem;
+    font-size: 01rem; 
+    border-radius: 3px;
+    width: auto;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+footer {
+    background-color: #232323;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9em;
+    margin-top: auto;
+}
