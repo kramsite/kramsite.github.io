@@ -36,6 +36,7 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+
 .search-container {
     display: flex;
     align-items: center;
@@ -127,86 +128,4 @@ footer {
     bottom: 0;
     font-size: 0.9em;
     margin-top: 20px
-}
-
-@media (max-width: 1024px) {
-    header {
-        flex-direction: column;
-        padding: 2rem;
-    }
-
-    nav a {
-        margin-left: 10px;
-        font-size: 2.5vw;
-    }
-
-    .intro {
-        padding: 40px 10px;
-    }
-
-    .intro h1 {
-        font-size: 2em;
-    }
-
-    .intro p {
-        font-size: 1.1em;
-    }
-
-    .cta-button {
-        padding: 1rem 1.5vw;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 1.5rem;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin-left: 0;
-        margin-bottom: 1vh;
-        font-size: 0.9rem;
-    }
-
-    .logo img {
-        height: 4vh;
-        width: 5vw;
-    }
-
-    .search-container {
-        width: 90%;
-    }
-
-    .search-input {
-        width: 70%;
-    }
-
-    .search-button {
-        width: 25%;
-        padding: 0.8rem;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    .intro h1 {
-        font-size: 2rem;
-    }
-
-    .intro p {
-        font-size: 1.2rem;
-    }
-
-    footer {
-        padding: 0.8rem;
-    }
 }

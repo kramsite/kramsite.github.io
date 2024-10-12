@@ -1,119 +1,170 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body{
-    font-family: georgia;
-    background-color: #fefefe;
-    margin: 0;
-    padding: 0;
+    font-family: Georgia, serif;
+    background-color: aliceblue;
+    color: #000000;
+    font-size: 1rem;
 }
 
 header{
     background-color: #dc1313;
-    padding: 10px 20px;
+    padding: 0.5rem 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    height: 50px;
-    width: 60px;
+    height: 3.5rem;
+    width: 4rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 2.5vw;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 .search-container {
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.3rem;
     background-color: #fff;
-    padding: 5px;
-    position: relative; 
+    padding: 0.4rem;
+    position: relative;
+    width: 100%;
 }
 
 .search-input {
-    padding: 5px;
+    padding: 0.5em;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
     outline: none;
+    width: 80%;
 }
 
 .search-button {
     background-color: #d6001c;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     color: white;
     cursor: pointer;
-    padding: 10px 15px;
-    font-size: 16px;
-    margin-left: 10px;
+    padding: 0.8rem 1.5vw;
+    font-size: 0.9rem;
+    margin-left: 1vw;
 }
 
 .search-button:hover {
     background-color: #ff0707;
 }
 
-
 main {
-    padding: 20px;
+    padding: 2rem 5vw;
     text-align: center;
+    min-height: calc(100vh - 100px);
 }
 
 .cadastro {
-    max-width: 400px;
+    max-width: 60%;
     margin: 0 auto;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 2rem;
+    border-radius: 0.8rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
 }
 
 .cadastro h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.8em;
+    margin-bottom: 0.5rem;
 }
 
 .cadastro form {
     text-align: left;
 }
 
-.casdastro label {
+.cadastro label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 0.2rem;
+    display: block;
 }
 
-.cadastro input[type="text"],
-.cadastro input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+.bold-label {
+    font-weight: bold;
+}
+
+.cadastro input[type="text"]{
+    width: 87%;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.cadastro input[type="email"]{
+    width: 50%;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.cadastro input[type="password"]{
+    width: 25%;
+    padding: 0.3rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.cadastro input[type="address"]{
+    width: 60%;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
     box-sizing: border-box;
 }
 
 .cadastro input[type="tel"] {
-    
-   
-    margin-bottom: 10px;
+    width: 25%;
+    padding: 0.3rem;
+    margin-bottom: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    
-    
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
 .cadastro button {
     background-color: #ff0000;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 0.8rem 2vw;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
 }
 
 .cadastro button:hover {
@@ -135,8 +186,10 @@ footer {
     background-color: #232323;
     color: #ffffff;
     text-align: center;
-    padding: 5px;
-    position: fixed;
+    padding: 0.5rem;
+    position: relative;
     width: 100%;
     bottom: 0;
+    font-size: 0.9em;
+    margin-top: 20px
 }
