@@ -171,19 +171,18 @@ section h2 {
     color: #555;
 }
 
-footer {
+.footer-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 1rem 2vw; 
-    background-color: #000000;
     color: #ffffff; 
     margin-top: auto; 
 }
 
-footer .btn-edit,
-footer .btn-logout {
+.footer-main .btn-edit,
+.footer-main .btn-logout {
     background-color: #28a745; 
     color: #fff;
     padding: 0.8rem 1.5vw;
@@ -192,20 +191,26 @@ footer .btn-logout {
     transition: background-color 0.3s;
 }
 
-footer .btn-logout {
+.footer-main .btn-logout {
     background-color: #dc3545;
 }
 
-footer .btn-edit:hover {
+.footer-main .btn-edit:hover {
     background-color: #218838;
 }
 
-footer .btn-logout:hover {
+.footer-main .btn-logout:hover {
     background-color: #c82333;
 }
 
-footer .copyright {
-    font-size: 0.9rem;
-    text-align: center; 
-    padding-left: 1rem;
+.footer-secondary .copyright {
+    background-color: #232323;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9em;
+    margin-top: 20px
 }
