@@ -1,113 +1,169 @@
-*   body {
-    font-family: Georgia;
-    background-color: #f5f5f5;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: Georgia, serif;
+    background-color: aliceblue;
+    color: #000000;
+    font-size: 1rem;
+}
+
 header {
     background-color: #dc1313;
-    padding: 10px 20px;
+    padding: 0.5rem 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    height: 50px;
-    width: 60px;
+    height: 3.5rem;
+    width: 4rem;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 2.5vw;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-.container {
-    padding: 30px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    padding: 0.1rem;
+    position: relative;
+    width: 50%;
+    max-width: 27vw;
+    margin-left: 5px;
 }
 
-h1 {
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-input {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    outline: none;
+    width: 80%;
+}
+
+.search-button {
+    background-color: #d6001c;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.8rem 1.5vw;
+    font-size: 0.9rem;
+    margin-left: 1vw;
+}
+
+.search-button:hover {
+    background-color: #ff0707;
+}
+
+main {
+    padding: 2rem;
     text-align: center;
-    color: #333333;
-    margin-bottom: 20px;
-    font-size: 28px;
+    min-height: calc(100vh - 100px);
 }
 
-.produto {
+.product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    align-items: flex-start;
+    gap: 1rem;
+    justify-content: center;
 }
 
-.produto img {
-    max-width: 300px;
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.product {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 200px;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: border 0.3s ease;
 }
 
-.produto-info {
-    max-width: 600px;
+.product img {
+    width: 100%;
+    height: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
 }
 
-.produto-info h2 {
-    margin-bottom: 15px;
-    color: #ca0000;
-    font-size: 28px;
-    
+.product h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
 }
 
-.produto-info p {
-    margin-bottom: 15px;
-    color: #5a5858;
-    line-height: 1.6;
+.add-product {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    background: #fff;
 }
 
-.produto-info ul {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    color: #444444
+.add-product input,
+.add-product textarea {
+    width: calc(100% - 1rem);
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.3rem;
 }
 
-.produto-info button {
-    background-color: #d6003c;
-    color: white;
-    padding: 15px 20px;
+.add-product button {
+    background: #e60023;
+    color: #fff;
     border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
-.produto-info button:hover {
-    background-color: #b50000;
-    transform: scale(1.05);
+.add-product button:hover {
+    background: #d6001c;
 }
 
 footer {
     background-color: #232323;
     color: #ffffff;
     text-align: center;
-    padding: 5px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 14px;
+    padding: 0.5rem;
+    font-size: 0.9em;
 }
