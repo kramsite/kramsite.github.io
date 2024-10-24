@@ -14,11 +14,14 @@
             <a href="index.html"><img src="img/logo/logo2.png" alt="Logo">
         </div>
         <nav>
-            <a href="sobre/sobre.html">Sobre</a>
-            <a href="perfil/Perfil.html">Perfil</a>
-            <a href="login/Loginkram.html">Login</a>
-            <a href="orcamento/orcamento.html">Orçamento</a>
-            <a href="produtos/produtos.html">Produtos</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="sobre/sobre.html">Sobre</a></li>
+                <li><a href="perfil/Perfil.html">Perfil</a></li>
+                <li><a href="login/Loginkram.html">Login</a></li>
+                <li><a href="orcamento/orcamento.html">Orçamento</a></li>
+                <li><a href="produtos/produtos.html">Produtos</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -33,6 +36,26 @@
     <footer>
         &copy; 2024 KRAM. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    menuToggle.addEventListener('click', toggleMenu);
+
+    const navLinks = document.querySelectorAll('.nav-links li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const nav = document.querySelector('.nav-links');
+            nav.classList.add('active');
+        });
+    });
+    </script>
+
 </body>
 
 </html>
