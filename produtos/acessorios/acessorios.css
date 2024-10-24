@@ -1,41 +1,42 @@
-* { 
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     font-family: georgia;
     background-color: aliceblue;
     color: #000000;
+    font-size: 1rem;
 }
 
-header {
+header{
     background-color: #dc1313;
-    padding: 10px 20px;
+    padding: 0.5rem 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    height: 50px;
-    width: 60px;
+    height: 3.5rem;
+    width: 4rem;
 }
 
 nav {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 2.5vw;
     font-weight: bold;
-    transition: text-decoration 0.3s ease;
+    font-size: 1.1rem;
 }
 
 nav a:hover {
@@ -45,49 +46,53 @@ nav a:hover {
 .search-container {
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.3rem;
     background-color: #fff;
-    padding: 5px;
+    padding: 0.1rem;
     position: relative;
-    margin-left: 20px;
+    width: 50%;
+    max-width: 27vw;
+    margin-left: 5px;
 }
 
 .search-container:focus-within {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.search-input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    flex: 1;
-}
-
 .search-input::placeholder {
     color: #aaa;
+}
+
+.search-input {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    outline: none;
+    width: 80%;
 }
 
 .search-button {
     background-color: #d6001c;
     border: none;
+    border-radius: 0.5rem;
     color: white;
-    border-radius: 10px;
     cursor: pointer;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease;
-    font-size: 14px;
+    padding: 0.8rem 1.5vw;
+    font-size: 0.9rem;
+    margin-left: 1vw;
 }
 
 .search-button:hover {
     background-color: #ff0707;
 }
 
+
 main {
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
+    min-height: calc(100vh - 100px);
 }
 
 .product-list {
@@ -103,7 +108,8 @@ main {
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 200px;
+    width: 90%;
+    max-width: 200px;
     text-align: center;
     padding: 1rem;
     display: flex;
@@ -115,6 +121,7 @@ main {
 .product img {
     width: 100%;
     height: 150px;
+    max-height: 150px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
     margin-bottom: 1rem;
@@ -162,8 +169,10 @@ footer {
     background-color: #232323;
     color: #ffffff;
     text-align: center;
-    padding: 5px;
-    position: fixed;
+    padding: 0.5rem;
+    position: relative;
     width: 100%;
     bottom: 0;
+    font-size: 0.9em;
+    margin-top: 20px
 }
