@@ -189,44 +189,51 @@
     }
 
     function finalizarOrcamento() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.setFontSize(14);
+    doc.text("Nome da Empresa", 20, 10);
+    doc.setFontSize(10);
+    doc.text("Endereço da Empresa", 20, 15);
+    doc.text("Telefone: (00) 0000-0000", 20, 20);
+    doc.text("Email: contato@empresa.com", 20, 25);
+    doc.text("===================================", 20, 30);
+
+    doc.setFontSize(20);
+    doc.text("Orçamento Detalhado", 20, 40);
+    doc.setFontSize(12);
+    doc.text("Data: " + new Date().toLocaleDateString(), 20, 50);
+    doc.text("===================================", 20, 55);
+    
+    let y = 60;
+
+    const items = document.querySelectorAll('#items-container .item-section');
+    items.forEach(item => {
+        const description = item.querySelector('input[type="text"]').value;
+        const price = item.querySelector('.item-price').innerText;
+
+        // Verifica se o próximo item vai passar da página
+        if (y > 250) { // 250 é um exemplo, ajuste conforme necessário
+            doc.addPage();
+            y = 10; // Reinicia a posição na nova página
+        }
         
-        doc.setFontSize(14);
-        doc.text("Nome da Empresa", 20, 10);
-        doc.setFontSize(10);
-        doc.text("Endereço da Empresa", 20, 15);
-        doc.text("Telefone: (00) 0000-0000", 20, 20);
-        doc.text("Email: contato@empresa.com", 20, 25);
-        doc.text("===================================", 20, 30);
-
-        doc.setFontSize(20);
-        doc.text("Orçamento Detalhado", 20, 40);
-        doc.setFontSize(12);
-        doc.text("Data: " + new Date().toLocaleDateString(), 20, 50);
-        doc.text("===================================", 20, 55);
-        
-        let y = 60;
-
-        const items = document.querySelectorAll('#items-container .item-section');
-        items.forEach(item => {
-            const description = item.querySelector('input[type="text"]').value;
-            const price = item.querySelector('.item-price').innerText;
-            doc.text(`${description}: ${price}`, 20, y);
-            y += 10;
-        });
-
-        doc.text("===================================", 20, y);
+        doc.text(`${description}: ${price}`, 20, y);
         y += 10;
-        doc.setFontSize(14);
-        doc.text(`Total: R$ ${totalValue.toFixed(2)}`, 20, y);
+    });
 
-        y += 20;
-        doc.setFontSize(10);
-        doc.text("Obrigado por escolher nossos serviços!", 20, y);
+    doc.text("===================================", 20, y);
+    y += 10;
+    doc.setFontSize(14);
+    doc.text(`Total: R$ ${totalValue.toFixed(2)}`, 20, y);
 
-        doc.save('orcamento.pdf');
-    }
+    y += 20;
+    doc.setFontSize(10);
+    doc.text("Obrigado por escolher nossos serviços!", 20, y);
+
+    doc.save('orcamento.pdf');
+}
 </script>
 
 <footer>
