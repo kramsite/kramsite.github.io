@@ -25,6 +25,27 @@ header{
     width: 4rem;
 }
 
+nav {
+    position: relative;
+    margin-left: auto; 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; 
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 2.5vw;
+}
+
 nav a {
     color: #ffffff;
     text-decoration: none;
@@ -128,4 +149,73 @@ footer {
     bottom: 0;
     font-size: 0.9em;
     margin-top: 20px
+}
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 0.9rem;
+    }
+
+    header {
+        padding: 0.5rem; 
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #dc1313; 
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+        text-align: center; 
+    }
+
+    .search-container {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+
+    .search-button {
+        width: 100%; 
+        margin-left: 0;
+        margin-top: 0.5rem; 
+    }
+
+    .intro {
+        padding: 3vh 1vw; 
+    }
+
+    .intro h1 {
+        font-size: 5vw; 
+    }
+
+    .intro p {
+        font-size: 1.2em; 
+    }
+
+    .cta-button {
+        padding: 0.8rem 5vw;
+        font-size: 1em; 
+    }
 }
