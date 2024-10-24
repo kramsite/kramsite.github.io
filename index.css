@@ -172,13 +172,13 @@ footer {
     }
 
     .nav-links {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #dc1313; 
-        width: 100%;
+        display: none; /* Oculta os links do menu em telas pequenas */
+        flex-direction: column; /* Alinha os links em coluna */
+        position: absolute; /* Torna o menu flutuante */
+        top: 100%; /* Alinha abaixo do cabeçalho */
+        right: 0; /* Alinha à direita */
+        background-color: #dc1313; /* Cor de fundo do menu */
+        width: 100%; 
         z-index: 10;
     }
 
