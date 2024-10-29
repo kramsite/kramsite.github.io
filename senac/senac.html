@@ -9,13 +9,12 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="../img/logo/logo2.png" alt="Logo">
+            <a href="index.html"><img src="../img/logo/logo2.png" alt="Logo do SENAC"></a>
         </div>
         <nav>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
                 <li><a href="senac/senac.html">Sobre</a></li>
-                <li><a href="sobre/sobre.html">Sobre</a></li>
                 <li><a href="perfil/Perfil.html">Perfil</a></li>
                 <li><a href="login/Loginkram.html">Login</a></li>
                 <li><a href="orcamento/orcamento.html">Orçamento</a></li>
@@ -32,7 +31,7 @@
             <button id="maisInfo">Saiba mais</button>
             <p id="infoAdicional" style="display: none;">O SENAC também oferece programas de qualificação e aperfeiçoamento profissional, além de serviços de consultoria para empresas.</p>
         </section>
-
+    
         <section id="cursos">
             <h2>Cursos Oferecidos</h2>
             <ul>
@@ -42,7 +41,27 @@
                 <li>Turismo</li>
             </ul>
         </section>
-
+    
+        <section id="topicos">
+            <h2>Tópicos de Interesse</h2>
+            <div class="topico">
+                <h3 class="topico-titulo">1. Programas de Qualificação</h3>
+                <p class="topico-conteudo" style="display: none;">Os programas de qualificação são voltados para a formação e atualização de profissionais, ajudando-os a se destacar no mercado de trabalho.</p>
+            </div>
+            <div class="topico">
+                <h3 class="topico-titulo">2. Serviços de Consultoria</h3>
+                <p class="topico-conteudo" style="display: none;">O SENAC oferece consultoria para empresas que desejam aprimorar seus processos e desenvolver suas equipes.</p>
+            </div>
+            <div class="topico">
+                <h3 class="topico-titulo">3. Formação Continuada</h3>
+                <p class="topico-conteudo" style="display: none;">Cursos de formação continuada ajudam profissionais a se atualizarem nas suas áreas de atuação.</p>
+            </div>
+            <div class="topico">
+                <h3 class="topico-titulo">4. Eventos e Palestras</h3>
+                <p class="topico-conteudo" style="display: none;">O SENAC promove eventos e palestras que reúnem especialistas para discutir tendências do mercado e compartilhar conhecimento.</p>
+            </div>
+        </section>
+    
         <section id="contato">
             <h2>Contato</h2>
             <p>Email: contato@senac.com.br</p>
@@ -51,7 +70,7 @@
     </main>
 
     <footer>
-        &copy; 2024 KRAM. Todos os direitos reservados.</p>
+        &copy; 2024 KRAM. Todos os direitos reservados.
     </footer>
 
     <script>
@@ -65,6 +84,21 @@
                 this.textContent = "Saiba mais";
             }
         });
+        const topicoTitulos = document.querySelectorAll(".topico-titulo");
+
+topicoTitulos.forEach(titulo => {
+    titulo.addEventListener("click", function() {
+        const conteudo = this.nextElementSibling;
+        if (conteudo.style.display === "none" || conteudo.style.display === "") {
+            conteudo.style.display = "block";
+            this.textContent = this.textContent.replace("▼", "▲"); // Muda o texto para indicar expansão
+        } else {
+            conteudo.style.display = "none";
+            this.textContent = this.textContent.replace("▲", "▼"); // Muda o texto para indicar colapso
+        }
+    });
+});
+
     </script>
 </body>
 </html>
