@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o SENAC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao SENAC</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="sobre">
+            <h2>Sobre o SENAC</h2>
+            <p>O Serviço Nacional de Aprendizagem Comercial (SENAC) é uma instituição de ensino brasileira focada na educação profissional.</p>
+            <p>Fundado em 1946, o SENAC oferece cursos em diversas áreas, como administração, saúde, tecnologia e turismo, com o objetivo de preparar os alunos para o mercado de trabalho.</p>
+            <button id="maisInfo">Saiba mais</button>
+            <p id="infoAdicional" style="display: none;">O SENAC também oferece programas de qualificação e aperfeiçoamento profissional, além de serviços de consultoria para empresas.</p>
+        </section>
+
+        <section id="cursos">
+            <h2>Cursos Oferecidos</h2>
+            <ul>
+                <li>Administração</li>
+                <li>Informática</li>
+                <li>Estética</li>
+                <li>Turismo</li>
+            </ul>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Email: contato@senac.com.br</p>
+            <p>Telefone: (11) 1234-5678</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SENAC - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        document.getElementById("maisInfo").addEventListener("click", function() {
+            const info = document.getElementById("infoAdicional");
+            if (info.style.display === "none") {
+                info.style.display = "block";
+                this.textContent = "Mostrar menos";
+            } else {
+                info.style.display = "none";
+                this.textContent = "Saiba mais";
+            }
+        });
+    </script>
+</body>
+</html>
