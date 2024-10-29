@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: Georgia, serif;
+    font-family: georgia;
     background-color: aliceblue;
     color: #000000;
     font-size: 1rem;
@@ -23,6 +23,27 @@ header{
 .logo img {
     height: 3.5rem;
     width: 4rem;
+}
+
+nav {
+    position: relative;
+    margin-left: auto; 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; 
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 2.5vw;
 }
 
 nav a {
@@ -72,10 +93,17 @@ nav a:hover {
     background-color: #ff0707;
 }
 
+
 main {
-    padding: 2rem 5vw;
+    padding: 2rem;
     text-align: center;
     min-height: calc(100vh - 100px);
+}
+
+main img {
+    width: 100%; 
+    height: auto; 
+    max-width: 100%; 
 }
 
 h2 {
