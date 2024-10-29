@@ -72,12 +72,12 @@
         }
 
         button:hover {
-            background-color: #e68a00; /* Tom mais escuro */
+            background-color: #e68a00;
         }
 
         .info {
             display: none;
-            background-color: #e0f7fa; /* Azul claro */
+            background-color: #e0f7fa;
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
@@ -150,7 +150,6 @@
     </footer>
 
     <script>
-        // Conteúdo da seção "Sobre"
         const sobreInfo = {
             descricao: "O Serviço Nacional de Aprendizagem Comercial (SENAC) é uma instituição de ensino brasileira focada na educação profissional.",
             fundacao: "Fundado em 1946, o SENAC tem como objetivo promover a formação de profissionais capacitados para o mercado de trabalho, oferecendo uma ampla gama de cursos e programas de treinamento.",
@@ -159,7 +158,7 @@
             valores: ["Qualidade", "Ética", "Inovação", "Responsabilidade Social"]
         };
 
-        // Renderiza o conteúdo da seção "Sobre"
+
         function renderizarSobre() {
             const sobreContent = document.getElementById("sobreContent");
             sobreContent.innerHTML = `
@@ -176,7 +175,7 @@
             `;
         }
 
-        // Exibir informações adicionais
+
         document.getElementById("maisInfo").addEventListener("click", function() {
             const info = document.getElementById("infoAdicional");
             if (info.style.display === "none" || info.style.display === "") {
@@ -189,7 +188,6 @@
             }
         });
 
-        // Inicializa a seção "Sobre"
         renderizarSobre();
     </script>
 </body>
