@@ -110,6 +110,24 @@ h2 {
     color: #333;
 }
 
+.topico {
+    margin: 1.5rem 0;
+    cursor: pointer;
+}
+
+.topico-titulo {
+    color: #dc1313;
+    font-size: 1.2rem;
+}
+
+.topico-conteudo {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+    transition: max-height 0.3s ease;
+}
+
+
 footer {
     background-color: #232323;
     color: #ffffff;
