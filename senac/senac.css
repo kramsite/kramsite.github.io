@@ -1,34 +1,81 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+body{
+    font-family: Georgia, serif;
+    background-color: aliceblue;
+    color: #000000;
+    font-size: 1rem;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+header{
+    background-color: #dc1313;
+    padding: 0.5rem 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+.logo img {
+    height: 3.5rem;
+    width: 4rem;
 }
 
-nav ul li a {
-    color: #fff;
+nav a {
+    color: #ffffff;
     text-decoration: none;
+    margin-left: 2.5vw;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    padding: 0.4rem;
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    outline: none;
+    width: 80%;
+}
+
+.search-button {
+    background-color: #d6001c;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.8rem 1.5vw;
+    font-size: 0.9rem;
+    margin-left: 1vw;
+}
+
+.search-button:hover {
+    background-color: #ff0707;
 }
 
 main {
-    padding: 20px;
+    padding: 2rem 5vw;
+    text-align: center;
+    min-height: calc(100vh - 100px);
 }
 
 h2 {
