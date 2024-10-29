@@ -9,11 +9,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
         }
 
         header {
-            background: #dc1313;
+            background: #006699; /* Azul SENAC */
             color: #fff;
             padding: 1rem 0;
             text-align: center;
@@ -22,24 +22,28 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
             display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
         }
 
         main {
             padding: 20px;
+            max-width: 800px;
+            margin: auto;
         }
 
         h2 {
-            color:black;
+            color: #006699;
         }
 
         footer {
@@ -50,6 +54,28 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+
+        button {
+            background-color: #ff9900; /* Laranja SENAC */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #e68a00; /* Tom mais escuro */
+        }
+
+        .info {
+            display: none;
+            background-color: #e0f7fa; /* Azul claro */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -69,9 +95,20 @@
         <section id="sobre">
             <h2>Sobre o SENAC</h2>
             <p>O Serviço Nacional de Aprendizagem Comercial (SENAC) é uma instituição de ensino brasileira focada na educação profissional.</p>
-            <p>Fundado em 1946, o SENAC oferece cursos em diversas áreas, como administração, saúde, tecnologia e turismo, com o objetivo de preparar os alunos para o mercado de trabalho.</p>
+            <p>Fundado em 1946, o SENAC tem como objetivo promover a formação de profissionais capacitados para o mercado de trabalho, oferecendo uma ampla gama de cursos e programas de treinamento.</p>
+            <h3>Missão</h3>
+            <p>Proporcionar educação profissional de qualidade, contribuindo para o desenvolvimento social e econômico do Brasil.</p>
+            <h3>Visão</h3>
+            <p>Ser reconhecido como referência em educação profissional, formando cidadãos éticos e competentes.</p>
+            <h3>Valores</h3>
+            <ul>
+                <li>Qualidade</li>
+                <li>Ética</li>
+                <li>Inovação</li>
+                <li>Responsabilidade Social</li>
+            </ul>
             <button id="maisInfo">Saiba mais</button>
-            <p id="infoAdicional" style="display: none;">O SENAC também oferece programas de qualificação e aperfeiçoamento profissional, além de serviços de consultoria para empresas.</p>
+            <div id="infoAdicional" class="info">O SENAC também oferece programas de qualificação e aperfeiçoamento profissional, além de serviços de consultoria para empresas.</div>
         </section>
 
         <section id="cursos">
