@@ -11,31 +11,31 @@
             padding: 0;
             background-color: #f9f9f9;
         }
+        header{
+    background-color: #dc1313;
+    padding: 0.5rem 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
 
-        header {
-            background: #dc1313; /* Vermelho desejado */
-            color: #fff;
-            padding: 0.5rem 0; /* Cabeçalho mais fino */
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.logo img {
+    height: 3.5rem;
+    width: 4rem;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 2.5vw;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+nav a:hover {
+    text-decoration: underline;
+}
 
         main {
             padding: 20px;
@@ -44,8 +44,8 @@
         }
 
         h2 {
-            color: #006699;
-            border-bottom: 2px solid #006699;
+            color: #dc1313; /* Cor do título */
+            border-bottom: 2px solid #dc1313; /* Cor da linha embaixo */
             padding-bottom: 5px;
         }
 
@@ -109,7 +109,7 @@
 
         .valor a {
             text-decoration: none;
-            color: #006699;
+            color: #006699; /* Cor do link */
             font-weight: bold;
         }
     </style>
@@ -137,10 +137,23 @@
         <section id="cursos">
             <h2>Cursos Oferecidos</h2>
             <ul>
-                <li>Administração</li>
+                <li>Artes</li>
+                <li>Ambiente e Saúde</li>
+                <li>Lazer</li>
+                <li>Beleza</li>
+                <li>Meio Ambiente</li>
+                <li>Comércio</li>
                 <li>Informática</li>
-                <li>Estética</li>
+                <li>Comunicação</li>
+                <li>Moda</li>
+                <li>Design</li>
+                <li>Educação</li>
+                <li>Segurança</li>
                 <li>Turismo</li>
+                <li>Gestão e Negócio</li>
+                <li>Infraestrutura</li>
+                <li>Hospitalidade</li>
+                <li>Produção Cultural</li>
             </ul>
         </section>
 
@@ -159,6 +172,8 @@
         const sobreInfo = {
             descricao: "O Serviço Nacional de Aprendizagem Comercial (SENAC) é uma instituição de ensino brasileira focada na educação profissional.",
             fundacao: "Fundado em 1946, o SENAC tem como objetivo promover a formação de profissionais capacitados para o mercado de trabalho, oferecendo uma ampla gama de cursos e programas de treinamento.",
+            quem: "O SENAC foi fundado por um grupo de empresários do comércio, liderados pela Confederação Nacional do Comércio (CNC), com a finalidade de oferecer educação profissional de qualidade aos trabalhadores do setor comercial.",
+            finalidade: "A finalidade do SENAC é contribuir para a formação de profissionais qualificados, estimulando o desenvolvimento social e econômico do Brasil.",
             missao: "Proporcionar educação profissional de qualidade, contribuindo para o desenvolvimento social e econômico do Brasil.",
             visao: "Ser reconhecido como referência em educação profissional, formando cidadãos éticos e competentes.",
             valores: [
@@ -174,6 +189,8 @@
             sobreContent.innerHTML = `
                 <p>${sobreInfo.descricao}</p>
                 <p>${sobreInfo.fundacao}</p>
+                <p>${sobreInfo.quem}</p>
+                <p>${sobreInfo.finalidade}</p>
                 <h3>Missão</h3>
                 <p>${sobreInfo.missao}</p>
                 <h3>Visão</h3>
@@ -201,3 +218,4 @@
     </script>
 </body>
 </html>
+
