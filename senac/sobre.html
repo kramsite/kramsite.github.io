@@ -13,9 +13,9 @@
         }
 
         header {
-            background: #006699; /* Azul SENAC */
+            background: #dc1313; /* Vermelho desejado */
             color: #fff;
-            padding: 1rem 0;
+            padding: 0.5rem 0; /* Cabeçalho mais fino */
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -106,6 +106,12 @@
         .valor:hover {
             transform: scale(1.05);
         }
+
+        .valor a {
+            text-decoration: none;
+            color: #006699;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -155,9 +161,13 @@
             fundacao: "Fundado em 1946, o SENAC tem como objetivo promover a formação de profissionais capacitados para o mercado de trabalho, oferecendo uma ampla gama de cursos e programas de treinamento.",
             missao: "Proporcionar educação profissional de qualidade, contribuindo para o desenvolvimento social e econômico do Brasil.",
             visao: "Ser reconhecido como referência em educação profissional, formando cidadãos éticos e competentes.",
-            valores: ["Qualidade", "Ética", "Inovação", "Responsabilidade Social"]
+            valores: [
+                { nome: "Qualidade", link: "https://8quali.com.br/o-que-e-qualidade/" },
+                { nome: "Ética", link: "https://www.pi.senac.br/institucional/missaovisao" },
+                { nome: "Inovação", link: "https://www.sp.senac.br/inovacao" },
+                { nome: "Responsabilidade Social", link: "https://example.com/responsabilidade-social" }
+            ]
         };
-
 
         function renderizarSobre() {
             const sobreContent = document.getElementById("sobreContent");
@@ -170,11 +180,10 @@
                 <p>${sobreInfo.visao}</p>
                 <h3>Valores</h3>
                 <div class="valores">
-                    ${sobreInfo.valores.map(valor => `<div class="valor">${valor}</div>`).join('')}
+                    ${sobreInfo.valores.map(valor => `<div class="valor"><a href="${valor.link}" target="_blank">${valor.nome}</a></div>`).join('')}
                 </div>
             `;
         }
-
 
         document.getElementById("maisInfo").addEventListener("click", function() {
             const info = document.getElementById("infoAdicional");
