@@ -5,9 +5,9 @@
 }
 
 body{
-    font-family: georgia;
-    background-color: aliceblue;
-    color: #000000;
+    font-family: georgia, serif;
+    background-color: #f0f8ff;
+    color: #333;
     font-size: 1rem;
 }
 
@@ -110,9 +110,30 @@ h2 {
     color: #333;
 }
 
+.container {
+    max-width: 800px; /* Largura máxima para o container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 2rem; /* Adiciona um padding interno */
+    background-color: #ffffff; /* Fundo branco para o container */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+#sobre {
+    margin-bottom: 2rem; /* Espaço inferior para separar do próximo conteúdo */
+}
+
 .topico {
     margin: 1.5rem 0;
     cursor: pointer;
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s; 
+}
+
+.topico:hover {
+    transform: translateY(-5px);
 }
 
 .topico-titulo {
