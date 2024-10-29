@@ -32,6 +32,34 @@
             <p>Com diversas unidades espalhadas pelo Brasil, o Senac está presente em diferentes regiões, adaptando seus cursos e serviços às realidades locais. Essa presença estratégica permite que a instituição atenda de forma eficaz as demandas do mercado de trabalho e apoie o crescimento profissional dos seus alunos, promovendo não apenas o desenvolvimento individual, mas também o progresso social e econômico das comunidades onde está inserido.</p>
         </section>
 
+        <section id="topicos">
+            <h2>Tópicos Relevantes</h2>
+            <div class="topico">
+                <h3 onclick="toggleTópico(this)">1. Quando Surgiu</h3>
+                <div class="conteudo" style="display: none;">
+                    <p>O Senac foi fundado em 1946, em um contexto de transformação no Brasil, durante um período de crescente industrialização e expansão do comércio urbano. Desde então, a instituição tem se adaptado e crescido, estabelecendo unidades em várias regiões do país e contribuindo para a formação de milhares de profissionais ao longo dos anos. Hoje, o Senac é uma referência em educação profissional no Brasil.</p>
+                </div>
+            </div>
+            <div class="topico">
+                <h3 onclick="toggleTópico(this)">2. Quem</h3>
+                <div class="conteudo" style="display: none;">
+                    <p>O Senac foi formado a partir da união de esforços de entidades como a Confederação Nacional do Comércio (CNC) e outras associações do setor comercial e industrial. Essas organizações se juntaram para estabelecer uma instituição focada na educação profissional, com o objetivo de atender às necessidades de formação do mercado de trabalho. Essa colaboração entre o setor privado e público foi fundamental para a criação de uma rede de unidades que se expandiu pelo país.</p>
+                </div>
+            </div>
+            <div class="topico">
+                <h3 onclick="toggleTópico(this)">3. Inovação e Tecnologia</h3>
+                <div class="conteudo" style="display: none;">
+                    <p>A instituição investe em inovação e tecnologia para oferecer cursos que atendam às novas demandas do mercado.</p>
+                </div>
+            </div>
+            <div class="topico">
+                <h3 onclick="toggleTópico(this)">4. Parcerias com Empresas</h3>
+                <div class="conteudo" style="display: none;">
+                    <p>O SENAC estabelece parcerias com diversas empresas para criar programas de estágio e desenvolvimento profissional.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="cursos">
             <h2>Cursos Oferecidos</h2>
             <ul>
@@ -78,6 +106,15 @@
                 this.textContent = "Saiba mais";
             }
         });
+
+        function toggleTópico(element) {
+            const conteudo = element.nextElementSibling;
+            if (conteudo.style.display === "none" || conteudo.style.display === "") {
+                conteudo.style.display = "block";
+            } else {
+                conteudo.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
