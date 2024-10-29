@@ -4,124 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre o SENAC</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header{
-    background-color: #dc1313;
-    padding: 0.5rem 1.5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-}
-
-.logo img {
-    height: 3.5rem;
-    width: 4rem;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin-left: 2.5vw;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        h2 {
-            color: #dc1313; /* Cor do título */
-            border-bottom: 2px solid #dc1313; /* Cor da linha embaixo */
-            padding-bottom: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #333;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        button {
-            background-color: #ff9900; /* Laranja SENAC */
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #e68a00;
-        }
-
-        .info {
-            display: none;
-            background-color: #e0f7fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .valores {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .valor {
-            background-color: #e0f7fa;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .valor:hover {
-            transform: scale(1.05);
-        }
-
-        .valor a {
-            text-decoration: none;
-            color: #006699; /* Cor do link */
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="senacc.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao SENAC</h1>
+        <div class="logo">
+            <a href="index.html"><img src="../img/logo/logo2.png" alt="Logo do SENAC"></a>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#contato">Contato</a></li>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="senac/senac.html">Sobre</a></li>
+                <li><a href="perfil/Perfil.html">Perfil</a></li>
+                <li><a href="login/Loginkram.html">Login</a></li>
+                <li><a href="orcamento/orcamento.html">Orçamento</a></li>
+                <li><a href="produtos/produtos.html">Produtos</a></li>
             </ul>
         </nav>
     </header>
@@ -129,9 +26,10 @@ nav a:hover {
     <main>
         <section id="sobre">
             <h2>Sobre o SENAC</h2>
-            <div id="sobreContent"></div>
-            <button id="maisInfo">Saiba mais</button>
-            <div id="infoAdicional" class="info"></div>
+            <p>O Senac, Serviço Nacional de Aprendizagem Comercial, é uma instituição brasileira que desempenha um papel fundamental na educação profissional voltada para o setor comercial. Com uma missão de promover a capacitação e o desenvolvimento de competências, o Senac se destaca por sua abordagem prática e inovadora, visando atender às necessidades do mercado de trabalho.</p>
+            <p>A instituição oferece uma ampla variedade de cursos, que abrangem desde capacitações técnicas até especializações, nas mais diversas áreas, como comércio, serviços, turismo e tecnologia. Esses cursos são projetados para preparar os alunos para os desafios do mundo profissional, proporcionando uma formação sólida e atualizada.</p>
+            <p>Além da formação profissional, o Senac se envolve em programas de inclusão social e empreendedorismo, buscando oferecer oportunidades a diferentes grupos da sociedade. Com isso, contribui para a qualificação da mão de obra e o fortalecimento da economia local, ajudando a criar um ambiente mais dinâmico e competitivo.</p>
+            <p>Com diversas unidades espalhadas pelo Brasil, o Senac está presente em diferentes regiões, adaptando seus cursos e serviços às realidades locais. Essa presença estratégica permite que a instituição atenda de forma eficaz as demandas do mercado de trabalho e apoie o crescimento profissional dos seus alunos, promovendo não apenas o desenvolvimento individual, mas também o progresso social e econômico das comunidades onde está inserido.</p>
         </section>
 
         <section id="cursos">
@@ -159,49 +57,16 @@ nav a:hover {
 
         <section id="contato">
             <h2>Contato</h2>
-            <p>Email: contato@senac.com.br</p>
-            <p>Telefone: (11) 1234-5678</p>
+            <p>Email: <a href="mailto:contato@senac.com.br">contato@senac.com.br</a></p>
+            <p>Telefone: <a href="tel:(11)1234-5678">(11) 1234-5678</a></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 SENAC - Todos os direitos reservados</p>
+        &copy; 2024 KRAM. Todos os direitos reservados.
     </footer>
 
     <script>
-        const sobreInfo = {
-            descricao: "O Serviço Nacional de Aprendizagem Comercial (SENAC) é uma instituição de ensino brasileira focada na educação profissional.",
-            fundacao: "Fundado em 1946, o SENAC tem como objetivo promover a formação de profissionais capacitados para o mercado de trabalho, oferecendo uma ampla gama de cursos e programas de treinamento.",
-            quem: "O SENAC foi fundado por um grupo de empresários do comércio, liderados pela Confederação Nacional do Comércio (CNC), com a finalidade de oferecer educação profissional de qualidade aos trabalhadores do setor comercial.",
-            finalidade: "A finalidade do SENAC é contribuir para a formação de profissionais qualificados, estimulando o desenvolvimento social e econômico do Brasil.",
-            missao: "Proporcionar educação profissional de qualidade, contribuindo para o desenvolvimento social e econômico do Brasil.",
-            visao: "Ser reconhecido como referência em educação profissional, formando cidadãos éticos e competentes.",
-            valores: [
-                { nome: "Qualidade", link: "https://8quali.com.br/o-que-e-qualidade/" },
-                { nome: "Ética", link: "https://www.pi.senac.br/institucional/missaovisao" },
-                { nome: "Inovação", link: "https://www.sp.senac.br/inovacao" },
-                { nome: "Responsabilidade Social", link: "https://example.com/responsabilidade-social" }
-            ]
-        };
-
-        function renderizarSobre() {
-            const sobreContent = document.getElementById("sobreContent");
-            sobreContent.innerHTML = `
-                <p>${sobreInfo.descricao}</p>
-                <p>${sobreInfo.fundacao}</p>
-                <p>${sobreInfo.quem}</p>
-                <p>${sobreInfo.finalidade}</p>
-                <h3>Missão</h3>
-                <p>${sobreInfo.missao}</p>
-                <h3>Visão</h3>
-                <p>${sobreInfo.visao}</p>
-                <h3>Valores</h3>
-                <div class="valores">
-                    ${sobreInfo.valores.map(valor => `<div class="valor"><a href="${valor.link}" target="_blank">${valor.nome}</a></div>`).join('')}
-                </div>
-            `;
-        }
-
         document.getElementById("maisInfo").addEventListener("click", function() {
             const info = document.getElementById("infoAdicional");
             if (info.style.display === "none" || info.style.display === "") {
@@ -213,9 +78,6 @@ nav a:hover {
                 this.textContent = "Saiba mais";
             }
         });
-
-        renderizarSobre();
     </script>
 </body>
 </html>
-
