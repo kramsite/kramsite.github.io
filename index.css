@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: georgia;
+    font-family: georgia, serif;
     background-color: aliceblue;
     color: #000000;
     font-size: 1rem;
@@ -148,7 +148,7 @@ footer {
     width: 100%;
     bottom: 0;
     font-size: 0.9em;
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
@@ -197,25 +197,25 @@ footer {
     }
 
     .search-button {
-        width: 100%; /* Botão ocupa a largura total */
-        margin-left: 0; /* Remove a margem */
-        margin-top: 0.5rem; /* Adiciona espaço acima do botão */
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 0.5rem; 
     }
 
     .intro {
-        padding: 3vh 1vw; /* Ajusta o padding da seção de introdução */
+        padding: 3vh 1vw; 
     }
 
     .intro h1 {
-        font-size: 5vw; /* Ajusta o tamanho da fonte do título */
+        font-size: 5vw; 
     }
 
     .intro p {
-        font-size: 1.2em; /* Ajusta o tamanho da fonte do parágrafo */
+        font-size: 1.2em; 
     }
 
     .cta-button {
-        padding: 0.8rem 5vw; /* Ajusta o padding do botão CTA */
-        font-size: 1em; /* Ajusta o tamanho da fonte do botão */
+        padding: 0.8rem 5vw; 
+        font-size: 1em;
     }
 }

@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="img/logo/logo2.png" alt="Logo">
+            <a href="index.html"><img src="img/logo/logo2.png" alt="Logo"></a>
         </div>
         <nav>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -35,26 +35,14 @@
         </section>
     </main>
     <footer>
-        &copy; 2024 KRAM. Todos os direitos reservados.</p>
+        &copy; 2024 KRAM. Todos os direitos reservados.
     </footer>
 
     <script>
-        function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-    }
-
-    const menuToggle = document.querySelector('.menu-toggle');
-    menuToggle.addEventListener('click', toggleMenu);
-
-    const navLinks = document.querySelectorAll('.nav-links li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.stopPropagation();
-            const nav = document.querySelector('.nav-links');
-            nav.classList.add('active');
-        });
-    });
+   function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
     </script>
 
 </body>
