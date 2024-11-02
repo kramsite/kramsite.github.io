@@ -176,30 +176,35 @@ footer {
         display: none; 
         flex-direction: column;
         position: fixed;
-        top: 80px;
-        left: 5%;
-        right: 50%;
-        transform: translateX(50%);
+        top: 78px;
+        right: 0;
         background-color: #dc1313; 
-        width: 90%;
+        width: 40%;
+        height: auto;
+        max-width: 60vh;
         padding: 1rem 0;
         z-index: 10;
         border-radius: 0.5rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
     }
 
     .nav-links.active {
         display: flex;
+        transform: translateX(0);
     }
 
     .nav-links li {
-        margin: 1rem 0;
-        text-align: center; 
+        margin: 0;
+        text-align: right;
+        padding: 0.5rem 1rem;
+        width: 100%;
     }
 
     .nav a {
         color: #ffffff;
-        padding: 0.8rem 0;
+        padding: 0.5rem 0;
         text-decoration: none;
         display: block;
     }

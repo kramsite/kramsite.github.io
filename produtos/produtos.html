@@ -74,7 +74,6 @@
             if (nameInput.value && fileInput.files[0]) {
                 const imgSrc = URL.createObjectURL(fileInput.files[0]);
 
-                // Create a new link element for the category
                 const newCategoryLink = document.createElement('a');
                 newCategoryLink.href = "#";
                 newCategoryLink.target = "_blank";
@@ -82,15 +81,12 @@
                 newCategoryLink.style.backgroundImage = `url(${imgSrc})`;
                 newCategoryLink.textContent = nameInput.value;
 
-                // Add the new category to the container
                 const container = document.querySelector('.container');
                 container.appendChild(newCategoryLink);
 
-                // Clear the input fields
                 nameInput.value = '';
                 fileInput.value = '';
 
-                // Hide the input fields after adding the category
                 document.getElementById('new-category-inputs').style.display = 'none';
             }
         });

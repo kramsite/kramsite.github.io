@@ -216,3 +216,54 @@ footer {
     font-size: 0.9em;
     margin-top: 20px
 }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav a {
+        margin-left: 0; /* Remover margem à esquerda em telas menores */
+        margin-bottom: 1rem; /* Espaçamento entre os links */
+        font-size: 1rem; /* Ajustar o tamanho da fonte */
+    }
+
+    .search-container {
+        width: 100%; /* Ajustar para largura total em telas pequenas */
+        margin: 1rem 0; /* Margem superior e inferior */
+    }
+
+    .search-input {
+        width: 100%; /* Ajustar a largura do campo de busca */
+    }
+
+    .container {
+        padding: 1rem; /* Reduzir padding em telas menores */
+    }
+
+    .botao {
+        height: 25vh; /* Ajustar a altura dos botões em telas menores */
+        font-size: 120%; /* Ajustar o tamanho da fonte */
+    }
+
+    .add-category-button {
+        width: 5vh; /* Reduzir o tamanho do botão de adicionar categoria */
+        height: 5vh; /* Reduzir o tamanho do botão de adicionar categoria */
+    }
+
+    #new-category-inputs input {
+        width: 100%; /* Ajustar largura dos inputs */
+        font-size: 4vw; /* Ajustar tamanho da fonte dos inputs */
+    }
+
+    #new-category-inputs {
+        flex-direction: column; /* Alinhar inputs verticalmente */
+    }
+}

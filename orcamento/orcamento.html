@@ -5,50 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamento</title>
     <link rel="stylesheet" href="orcamento.css">
-    <style>
-        .item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            margin-right: 10px;
-        }
-        .quantity-controls button {
-            width: 24px;
-            height: 36px;
-            font-size: 16px;
-            margin: 0 5px;
-        }
-        #item-quantity {
-            width: 40px;
-            height: 36px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">
-        <a href="../index.html"><img src="../img/logo/logo2.png" alt="Logo"></a>
-    </div>
-    <nav>
-        <a href="../sobre/sobre.html">Sobre</a>
-        <a href="../perfil/Perfil.html">Perfil</a>
-        <a href="../index.html">Home</a>
-        <a href="../produtos/produtos.html">Produtos</a>
-    </nav>
-</header>
+    <header>
+        <div class="logo">
+            <a href="../index.html"><img src="../img/logo/logo2.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="../sobre/sobre.html">Sobre</a>
+            <a href="../perfil/Perfil.html">Perfil</a>
+            <a href="../index.html">Home</a>
+            <a href="../produtos/produtos.html">Produtos</a>
+        </nav>
+    </header>
 
 <div class="orcamento">
     <h2>Orçamento</h2>
     <div id="items-container"></div>
     
     <div class="item">
-        <select id="item-select" onchange="updatePrice()">
+        <select id="item-select" onchange="addItem()">
             <option value="">Selecione um item</option>
             <optgroup label="Acessórios">
                 <option value="20.00">Arquinho</option>
@@ -152,82 +129,52 @@
                 <option value="59.90">Calça Legging</option>
                 <option value="99.90">Conjunto Feminino Branco</option>
                 <option value="79.90">Conjunto Feminino Floral</option>
-                <option value="89.90">Conjunto Masculino Esportivo</option>
-                <option value="49.90">Terno Masculino</option>
-                <option value="29.90">T-shirt</option>
-                <option value="49.90">Vestido Longo</option>
+                <option value="89.90">Conjunto Galinha Pintadinha</option>
+                <option value="99.90">Conjunto de Moletom</option>
+                <option value="199.90">Jaqueta de Couro</option>
+                <option value="109.90">Macacão Estampado</option>
+                <option value="49.90">Pijama Infantil</option>
+                <option value="39.90">Regata Fitness Feminina</option>
+                <option value="49.90">Saia Jeans</option>
+                <option value="69.90">Saia Midi Estampada</option>
+                <option value="59.90">Shorts Jeans Feminino</option>
+                <option value="39.90">Sunga Estampada</option>
+                <option value="39.90">T-shirt Estampada</option>
+                <option value="89.90">Vestido Longo de Verão</option>
             </optgroup>
         </select>
-        <div class="quantity-controls">
-            <button onclick="decreaseQuantity()">-</button>
-            <input type="number" id="item-quantity" value="1" min="1" readonly>
-            <button onclick="increaseQuantity()">+</button>
-        </div>
-        <span id="price-display">Preço: R$ 0.00</span>
     </div>
 
     <div class="total">Total: R$ <span id="total">0.00</span></div>
     <button onclick="finalizarOrcamento()">Finalizar Orçamento</button>
-    <button onclick="addItem()">Adicionar Item</button>
 </div>
 
 <script>
     let totalValue = 0;
 
-    function updatePrice() {
-        const select = document.getElementById('item-select');
-        const selectedOption = select.options[select.selectedIndex];
-        const quantity = parseInt(document.getElementById('item-quantity').value) || 1;
-
-        if (selectedOption.value) {
-            const itemValue = parseFloat(selectedOption.value);
-            const totalPrice = itemValue * quantity;
-            document.getElementById('price-display').innerText = `Preço: R$ ${totalPrice.toFixed(2)}`;
-        } else {
-            document.getElementById('price-display').innerText = `Preço: R$ 0.00`;
-        }
-    }
-
-    function increaseQuantity() {
-        const quantityInput = document.getElementById('item-quantity');
-        quantityInput.value = parseInt(quantityInput.value) + 1;
-        updatePrice();
-    }
-
-    function decreaseQuantity() {
-        const quantityInput = document.getElementById('item-quantity');
-        if (quantityInput.value > 1) {
-            quantityInput.value = parseInt(quantityInput.value) - 1;
-            updatePrice();
-        }
-    }
-
     function addItem() {
         const select = document.getElementById('item-select');
         const selectedOption = select.options[select.selectedIndex];
-        const quantity = parseInt(document.getElementById('item-quantity').value) || 1;
 
         if (selectedOption.value) {
             const itemValue = parseFloat(selectedOption.value);
-            const itemTotalValue = itemValue * quantity;
-            totalValue += itemTotalValue;
+            totalValue += itemValue;
 
             const container = document.getElementById('items-container');
             const newItemSection = document.createElement('div');
             newItemSection.className = 'item-section';
             newItemSection.innerHTML = `
                 <div class="item">
-                    <input type="text" value="${selectedOption.text} (x${quantity})" readonly>
-                    <span class="item-price">R$ ${itemTotalValue.toFixed(2)}</span>
-                    <button class="remove-btn" onclick="removeItem(this, ${itemTotalValue})">Remover</button>
+                    <input type="text" value="${selectedOption.text}" readonly>
+                    <span class="item-price">R$ ${itemValue.toFixed(2)}</span>
+                    <button class="remove-btn" onclick="removeItem(this, ${itemValue})">Remover</button>
                 </div>
             `;
             container.appendChild(newItemSection);
 
             document.getElementById('total').innerText = totalValue.toFixed(2);
+
             select.selectedIndex = 0;
-            document.getElementById('item-quantity').value = 1; // Resetar quantidade
-            document.getElementById('price-display').innerText = `Preço: R$ 0.00`; // Resetar preço
         } else {
             alert("Por favor, selecione um item.");
         }
@@ -264,12 +211,6 @@
         items.forEach(item => {
             const description = item.querySelector('input[type="text"]').value;
             const price = item.querySelector('.item-price').innerText;
-
-            if (y > 250) {
-                doc.addPage();
-                y = 10; // Reinicia a posição na nova página
-            }
-            
             doc.text(`${description}: ${price}`, 20, y);
             y += 10;
         });
