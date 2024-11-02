@@ -26,9 +26,24 @@ header{
 }
 
 nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    position: relative;
+    margin-left: auto; 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; 
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 2.5vw;
 }
 
 nav a {
@@ -49,12 +64,11 @@ nav a:hover {
     border: 0.1rem solid #ddd;
     border-radius: 0.3rem;
     background-color: #fff;
-    padding: 0.1rem;
+    padding: 0.4rem;
     position: relative;
-    width: 50%;
-    max-width: 27vw;
-    margin-left: 5px;
+    width: 100%;
 }
+
 
 .search-container:focus-within {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -218,30 +232,72 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+    body {
+        font-size: 0.9rem;
     }
 
-    nav {
+    header {
+        padding: 0.5rem; 
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #fff;
+    }
+
+    .menu-toggle:hover {
+        color: #f0f0f0;
+        background-color: transparent;
+    }
+
+    .nav-links {
+        display: none; 
         flex-direction: column;
-        align-items: flex-start;
+        position: fixed;
+        top: 78px;
+        right: 0;
+        background-color: #dc1313; 
+        width: 40%;
+        height: auto;
+        max-width: 60vh;
+        padding: 1rem 0;
+        z-index: 10;
+        border-radius: 0.5rem;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: right;
+        padding: 0.5rem 1rem;
         width: 100%;
     }
 
-    nav a {
-        margin-left: 0; /* Remover margem à esquerda em telas menores */
-        margin-bottom: 1rem; /* Espaçamento entre os links */
-        font-size: 1rem; /* Ajustar o tamanho da fonte */
+    .nav a {
+        color: #ffffff;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        display: block;
     }
 
     .search-container {
-        width: 100%; /* Ajustar para largura total em telas pequenas */
-        margin: 1rem 0; /* Margem superior e inferior */
+        flex-direction: column; 
+        align-items: stretch;
+        margin: 1rem 0;
     }
 
-    .search-input {
-        width: 100%; /* Ajustar a largura do campo de busca */
+    .search-button {
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 0.5rem; 
     }
 
     .container {
