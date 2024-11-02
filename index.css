@@ -170,16 +170,16 @@ footer {
         display: none; 
         flex-direction: column;
         position: fixed;
-        top: 100%;
-        left: 50%;
-        right: 0;
+        top: 60px;
+        left: 5%;
+        right: 50%;
         transform: translateX(50%);
         background-color: #dc1313; 
         width: 90%;
         padding: 1rem 0;
         z-index: 10;
         border-radius: 0.5rem;
-        max-width: 500px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     .nav-links.active {
@@ -187,18 +187,15 @@ footer {
     }
 
     .nav-links li {
-        margin: 0.8rem 0;
         margin: 1rem 0;
         text-align: center; 
     }
 
     .nav a {
-        margin-left: 0;
-        font-size: 1rem;
-        padding: 0.8rem 0;
-        display: block;
         color: #ffffff;
-        width: 100%;
+        padding: 0.8rem 0;
+        text-decoration: none;
+        display: block;
     }
 
     .search-container {
