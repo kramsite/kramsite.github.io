@@ -166,25 +166,20 @@ footer {
         display: block;
     }
 
-    nav a {
-        margin-left: 0;
-        font-size: 1rem;
-        padding: 0.8rem 0;
-        display: block;
-        color: #ffffff;
-        width: 100%;
-    }
-
     .nav-links {
         display: none; 
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 100%;
-        left: 0;
+        left: 50%;
+        right: 0;
+        transform: translateX(50%);
         background-color: #dc1313; 
-        width: 100%;
+        width: 90%;
         padding: 1rem 0;
         z-index: 10;
+        border-radius: 0.5rem;
+        max-width: 500px;
     }
 
     .nav-links.active {
@@ -195,6 +190,15 @@ footer {
         margin: 0.8rem 0;
         margin: 1rem 0;
         text-align: center; 
+    }
+
+    .nav a {
+        margin-left: 0;
+        font-size: 1rem;
+        padding: 0.8rem 0;
+        display: block;
+        color: #ffffff;
+        width: 100%;
     }
 
     .search-container {
