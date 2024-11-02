@@ -164,13 +164,19 @@ footer {
 
     .menu-toggle {
         display: block;
+        color: #fff;
+    }
+
+    .menu-toggle:hover {
+        color: #f0f0f0;
+        background-color: transparent;
     }
 
     .nav-links {
         display: none; 
         flex-direction: column;
         position: fixed;
-        top: 60px;
+        top: 80px;
         left: 5%;
         right: 50%;
         transform: translateX(50%);
