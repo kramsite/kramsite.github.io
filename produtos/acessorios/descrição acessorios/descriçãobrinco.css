@@ -1,113 +1,313 @@
-*   body {
-    font-family: Georgia;
-    background-color: #f5f5f5;
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header {
+body{
+    font-family: georgia, serif;
+    background-color: aliceblue;
+    color: #000000;
+    font-size: 1rem;
+}
+
+header{
     background-color: #dc1313;
-    padding: 10px 20px;
+    padding: 0.5rem 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo a i {
+    font-size: 2rem; 
+    margin-right: 10px;
+    color: #000; 
 }
 
 .logo img {
-    height: 50px;
-    width: 60px;
+    height: 3.5rem;
+    width: 4rem;
+}
+
+nav {
+    position: relative;
+    margin-left: auto; 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; 
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 0.5vw;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 2.5vw;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-.container {
-    padding: 30px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    padding: 0.4rem;
+    position: relative;
+    width: 100%;
 }
+
+.search-input {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    outline: none;
+    width: 80%;
+}
+
+.search-button {
+    background-color: #d6001c;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.8rem 1.5vw;
+    font-size: 0.9rem;
+    margin-left: 1vw;
+}
+
+.search-button:hover {
+    background-color: #ff0707;
+}
+
+
+main {
+    padding: 2rem;
+    text-align: center;
+    min-height: calc(100vh - 100px);
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 
 h1 {
     text-align: center;
-    color: #333333;
-    margin-bottom: 20px;
-    font-size: 28px;
+    margin-bottom: 1.5rem;
+    color: #dc1313;
 }
+
 
 .produto {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 2rem;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
 .produto img {
-    max-width: 300px;
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    max-height: 400px;  
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .produto-info {
-    max-width: 600px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 10px
 }
 
-.produto-info h2 {
-    margin-bottom: 15px;
-    color: #ca0000;
-    font-size: 28px;
-    
+.trocar-imagem {
+    position: absolute;
+    top: 10px;  /* Distância do topo da imagem */
+    left: 10px;  /* Distância da borda esquerda da imagem */
+    z-index: 10;
 }
 
-.produto-info p {
-    margin-bottom: 15px;
-    color: #5a5858;
-    line-height: 1.6;
-}
-
-.produto-info ul {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    color: #444444
-}
-
-.produto-info button {
-    background-color: #d6003c;
-    color: white;
-    padding: 15px 20px;
+/* Estilização do botão */
+.trocar-imagem button {
+    background-color: #d6001c;
     border: none;
-    cursor: pointer;
-    font-size: 16px;
     border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.trocar-imagem button:hover {
+    background-color: #ff0707;
+}
+
+
+button {
+    background-color: #dc1313;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #b11212;
+}
+
+.preco-container{
+    display: flex;  /* Flexbox para alinhar os itens horizontalmente */
+    align-items: center;  /* Alinha os itens no centro verticalmente */
+    justify-content: flex-start;  /* Garante que os itens fiquem à esquerda */
+    gap: 1rem;
+}
+
+#editarPrecoBtn {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.produto-info button:hover {
-    background-color: #b50000;
-    transform: scale(1.05);
+#editarPrecoBtn:hover {
+    background-color: #B22222;
+}
+
+.estoque-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.preco-container p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.estoque-controls button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.estoque-controls p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#novoPrecoInput {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80px;
+}
+
+/* Descrição e Características */
+#descricaoProduto, #caracteristicas {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+#caracteristicas li {
+    margin-bottom: 5px;
+}
+
+/* Edição */
+.editar-info input {
+    padding: 0.5rem;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+}
+
+#salvarEdicoesBtn {
+    background-color: #009933;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 footer {
     background-color: #232323;
     color: #ffffff;
     text-align: center;
-    padding: 5px;
-    position: fixed;
+    padding: 0.5rem;
+    position: relative;
     width: 100%;
     bottom: 0;
-    font-size: 14px;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .produto {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produto img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .produto-info {
+        text-align: center;
+    }
+
+    .preco-container, .estoque-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #novoPrecoInput {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
 }

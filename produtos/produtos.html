@@ -5,29 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="produto.css">
 </head>
 
 <body>
 
     <header>
-        <div class="logo">
-            <a href="../index.html"><img src="../img/logo/logo2.png" alt="Logo"></a>
+        <div class="logo-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo/logo2.png" alt="Logo">
+                </a>
+            </div>
+
+            <a href="../index.html" class="home-icon">
+                <i class="fas fa-home"></i>
+            </a>
         </div>
         <nav>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <ul class="nav-links">
-                <li><a href="login/Loginkram.html">Login</a></li>                
-                <li><a href="perfil/Perfil.html">Perfil</a></li>              
-                <li><a href="orcamento/orcamento.html">Orçamento</a></li>
-                <li><a href="produtos/produtos.html">Produtos</a></li>               
-                <li><a href="senac/senac.html">Senac</a></li>
-                <li><a href="sobre/sobre.html">Sobre</a></li>
+            <ul class="nav-links">                           
+                <li><a href="../orcamento/orcamento.html">Orçamento</a></li>
+                <li><a href="../index.html">Home</a></li> 
+                <li><a href="../perfil/Perfil.html">Perfil</a></li>               
+                <li><a href="../sobre/sobre.html">Sobre</a></li>
+                <li><a href="../senac/senac.html">Senac</a></li>
 
-                <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Buscar...">
-                    <button class="search-button">🔍</button>
-                </div>
             </ul>
         </nav>
     </header>

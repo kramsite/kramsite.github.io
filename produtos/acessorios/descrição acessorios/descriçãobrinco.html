@@ -5,121 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto - Página de Descrição</title>
-    <link rel="stylesheet" href="descriçãoagulha.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #dc1313;
-            padding: 10px 20px;
-        }
-
-        header .logo img {
-            height: 50px;
-        }
-
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-        }
-
-        .container {
-            padding: 20px;
-            text-align: left;
-        }
-
-        .produto {
-            display: flex;
-            align-items: flex-start;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .produto img {
-            max-width: 350px;
-            margin-right: 20px;
-        }
-
-        .produto-info {
-            text-align: left;
-        }
-
-        button {
-            background-color: #FF0000;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-right: 10px;
-        }
-
-        button:hover {
-            background-color: #B22222;
-        }
-
-        #trocarImagemBtn {
-            padding: 5px 10px;
-            font-size: 14px;
-        }
-
-        #mensagem {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .editar-info {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .editar-info input {
-            margin-bottom: 10px;
-            padding: 5px;
-            width: 100%;
-            max-width: 300px;
-        }
-
-        .trocar-imagem {
-            margin-bottom: 10px;
-        }
-
-        .estoque-controls {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-            justify-content: flex-start;
-        }
-
-        .estoque-controls button {
-            padding: 5px 10px;
-            margin: 0 5px;
-        }
-
-        .preco-container {
-            display: flex;
-            align-items: center;
-        }
-
-        #editarPrecoBtn {
-            padding: 5px 8px;
-            font-size: 12px;
-            margin-left: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="descriçãobrinco.css">
+   
 </head>
 <body>
 
@@ -153,9 +40,10 @@
                     <li id="caracteristica2">7cm</li>
                 </ul>
                 <div class="preco-container">
-                    <p id="precoProduto">Preço: R$ <span id="precoValor">50,99</span></p>
-                    <input type="text" id="novoPrecoInput" placeholder="Novo Preço" style="display: none; width: 60px;">
-                    <button id="editarPrecoBtn">Editar</button>
+                    <div class="preco-container">
+                        <p id="precoProduto">Preço: R$ <span id="precoValor">50,99</span></p>
+                        <button id="editarPrecoBtn">Editar</button>  <!-- O botão Editar já está ao lado do preço -->
+                    </div>
                 </div>
                 <div class="estoque-controls">
                     <button id="menosBtn">-</button>
@@ -178,6 +66,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        &copy; 2024 KRAM. Todos os direitos reservados.
+    </footer>
 
     <script>
         let quantidadeEstoque = 10;

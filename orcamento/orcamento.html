@@ -154,17 +154,14 @@
 <script>
    let totalValue = 0;
 
-// Função para adicionar o item selecionado ao orçamento
 function addItem() {
     const select = document.getElementById('item-select');
     const selectedOption = select.options[select.selectedIndex];
 
-    // Verifica se um item foi selecionado
     if (selectedOption.value) {
         const itemValue = parseFloat(selectedOption.value);
         totalValue += itemValue;
 
-        // Cria uma nova seção de item com as informações
         const container = document.getElementById('items-container');
         const newItemSection = document.createElement('div');
         newItemSection.className = 'item-section';
@@ -177,36 +174,28 @@ function addItem() {
         `;
         container.appendChild(newItemSection);
 
-        // Atualiza o total
         document.getElementById('total').innerText = totalValue.toFixed(2);
 
-        // Limpa a seleção após adicionar o item
         select.selectedIndex = 0;
     } else {
-        // Exibe uma mensagem de erro se não houver item selecionado
         showErrorMessage("Por favor, selecione um item.");
     }
 }
 
-// Função para remover o item do orçamento
 function removeItem(button, itemValue) {
     const itemDiv = button.closest('.item-section');
-    itemDiv.remove(); // Remove o item da lista
-    totalValue -= itemValue; // Atualiza o total
+    itemDiv.remove(); 
+    totalValue -= itemValue; 
     document.getElementById('total').innerText = totalValue.toFixed(2);
 }
 
-// Função para exibir uma mensagem de erro de forma elegante
 function showErrorMessage(message) {
-    // Cria o elemento de erro
     const errorMessage = document.createElement('div');
     errorMessage.className = 'error-message';
     errorMessage.innerText = message;
 
-    // Adiciona a mensagem de erro ao body
     document.body.appendChild(errorMessage);
 
-    // Remove a mensagem após 3 segundos
     setTimeout(() => {
         errorMessage.remove();
     }, 3000);

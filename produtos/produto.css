@@ -20,9 +20,32 @@ header{
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
+header .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+header .logo {
+    margin-right: 1px;
+}
+
 .logo img {
     height: 3.5rem;
     width: 4rem;
+}
+
+header .home-icon {
+    font-size: 1.50rem; 
+    color: #fff;
+    position: absolute;
+    bottom:5px; 
+    right: -40px;
+}
+
+header .home-icon i {
+    margin-right: 2px; 
 }
 
 nav {
@@ -43,7 +66,7 @@ nav {
 }
 
 .nav-links li {
-    margin-left: 2.5vw;
+    margin-left: 0.5vw;
 }
 
 nav a {
