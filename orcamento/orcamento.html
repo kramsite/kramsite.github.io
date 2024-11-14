@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamento</title>
     <link rel="stylesheet" href="orcamento.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <a href="../index.html"><img src="../img/logo/logo2.png" alt="Logo">
+            <a href="../index.html"><img src="../img/logo/logo2.png" alt="Logo"></a>
         </div>
         <nav>
             <a href="../sobre/sobre.html">Sobre</a>
@@ -150,82 +152,107 @@
 </div>
 
 <script>
-    let totalValue = 0;
+   let totalValue = 0;
 
-    function addItem() {
-        const select = document.getElementById('item-select');
-        const selectedOption = select.options[select.selectedIndex];
+// Função para adicionar o item selecionado ao orçamento
+function addItem() {
+    const select = document.getElementById('item-select');
+    const selectedOption = select.options[select.selectedIndex];
 
-        if (selectedOption.value) {
-            const itemValue = parseFloat(selectedOption.value);
-            totalValue += itemValue;
+    // Verifica se um item foi selecionado
+    if (selectedOption.value) {
+        const itemValue = parseFloat(selectedOption.value);
+        totalValue += itemValue;
 
-            const container = document.getElementById('items-container');
-            const newItemSection = document.createElement('div');
-            newItemSection.className = 'item-section';
-            newItemSection.innerHTML = `
-                <div class="item">
-                    <input type="text" value="${selectedOption.text}" readonly>
-                    <span class="item-price">R$ ${itemValue.toFixed(2)}</span>
-                    <button class="remove-btn" onclick="removeItem(this, ${itemValue})">Remover</button>
-                </div>
-            `;
-            container.appendChild(newItemSection);
+        // Cria uma nova seção de item com as informações
+        const container = document.getElementById('items-container');
+        const newItemSection = document.createElement('div');
+        newItemSection.className = 'item-section';
+        newItemSection.innerHTML = `
+            <div class="item">
+                <input type="text" value="${selectedOption.text}" readonly>
+                <span class="item-price">R$ ${itemValue.toFixed(2)}</span>
+                <button class="remove-btn" onclick="removeItem(this, ${itemValue})">Remover</button>
+            </div>
+        `;
+        container.appendChild(newItemSection);
 
-            document.getElementById('total').innerText = totalValue.toFixed(2);
-
-            select.selectedIndex = 0;
-        } else {
-            alert("Por favor, selecione um item.");
-        }
-    }
-
-    function removeItem(button, itemValue) {
-        const itemDiv = button.closest('.item-section');
-        itemDiv.remove();
-        totalValue -= itemValue;
+        // Atualiza o total
         document.getElementById('total').innerText = totalValue.toFixed(2);
+
+        // Limpa a seleção após adicionar o item
+        select.selectedIndex = 0;
+    } else {
+        // Exibe uma mensagem de erro se não houver item selecionado
+        showErrorMessage("Por favor, selecione um item.");
     }
+}
 
-    function finalizarOrcamento() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        
-        doc.setFontSize(14);
-        doc.text("Nome da Empresa", 20, 10);
-        doc.setFontSize(10);
-        doc.text("Endereço da Empresa", 20, 15);
-        doc.text("Telefone: (00) 0000-0000", 20, 20);
-        doc.text("Email: contato@empresa.com", 20, 25);
-        doc.text("===================================", 20, 30);
+// Função para remover o item do orçamento
+function removeItem(button, itemValue) {
+    const itemDiv = button.closest('.item-section');
+    itemDiv.remove(); // Remove o item da lista
+    totalValue -= itemValue; // Atualiza o total
+    document.getElementById('total').innerText = totalValue.toFixed(2);
+}
 
-        doc.setFontSize(20);
-        doc.text("Orçamento Detalhado", 20, 40);
-        doc.setFontSize(12);
-        doc.text("Data: " + new Date().toLocaleDateString(), 20, 50);
-        doc.text("===================================", 20, 55);
-        
-        let y = 60;
+// Função para exibir uma mensagem de erro de forma elegante
+function showErrorMessage(message) {
+    // Cria o elemento de erro
+    const errorMessage = document.createElement('div');
+    errorMessage.className = 'error-message';
+    errorMessage.innerText = message;
 
-        const items = document.querySelectorAll('#items-container .item-section');
-        items.forEach(item => {
-            const description = item.querySelector('input[type="text"]').value;
-            const price = item.querySelector('.item-price').innerText;
-            doc.text(`${description}: ${price}`, 20, y);
-            y += 10;
-        });
+    // Adiciona a mensagem de erro ao body
+    document.body.appendChild(errorMessage);
 
-        doc.text("===================================", 20, y);
+    // Remove a mensagem após 3 segundos
+    setTimeout(() => {
+        errorMessage.remove();
+    }, 3000);
+}
+
+
+function finalizarOrcamento() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.setFontSize(14);
+    doc.text("Nome da Empresa", 20, 10);
+    doc.setFontSize(10);
+    doc.text("Endereço da Empresa", 20, 15);
+    doc.text("Telefone: (00) 0000-0000", 20, 20);
+    doc.text("Email: contato@empresa.com", 20, 25);
+    doc.text("===================================", 20, 30);
+
+    doc.setFontSize(20);
+    doc.text("Orçamento Detalhado", 20, 40);
+    doc.setFontSize(12);
+    doc.text("Data: " + new Date().toLocaleDateString(), 20, 50);
+    doc.text("===================================", 20, 55);
+    
+    let y = 60;
+
+    const items = document.querySelectorAll('#items-container .item-section');
+    items.forEach(item => {
+        const description = item.querySelector('input[type="text"]').value;
+        const price = item.querySelector('.item-price').innerText;
+        doc.text(`${description}: ${price}`, 20, y);
         y += 10;
-        doc.setFontSize(14);
-        doc.text(`Total: R$ ${totalValue.toFixed(2)}`, 20, y);
+    });
 
-        y += 20;
-        doc.setFontSize(10);
-        doc.text("Obrigado por escolher nossos serviços!", 20, y);
+    doc.text("===================================", 20, y);
+    y += 10;
+    doc.setFontSize(14);
+    doc.text(`Total: R$ ${totalValue.toFixed(2)}`, 20, y);
 
-        doc.save('orcamento.pdf');
-    }
+    y += 20;
+    doc.setFontSize(10);
+    doc.text("Obrigado por escolher nossos serviços!", 20, y);
+
+    doc.save('orcamento.pdf');
+}
+
 </script>
 
 <footer>
