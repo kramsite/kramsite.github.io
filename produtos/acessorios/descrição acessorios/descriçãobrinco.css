@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: georgia, serif;
     background-color: aliceblue;
     color: #000000;
     font-size: 1rem;
 }
 
-header{
+header {
     background-color: #dc1313;
     padding: 0.5rem 1.5vw;
     display: flex;
@@ -21,9 +21,9 @@ header{
 }
 
 header .logo a i {
-    font-size: 2rem; 
+    font-size: 2rem;
     margin-right: 10px;
-    color: #000; 
+    color: #000;
 }
 
 .logo img {
@@ -33,7 +33,7 @@ header .logo a i {
 
 nav {
     position: relative;
-    margin-left: auto; 
+    margin-left: auto;
 }
 
 .menu-toggle {
@@ -44,7 +44,7 @@ nav {
 
 .nav-links {
     list-style: none;
-    display: flex; 
+    display: flex;
     margin-left: auto;
 }
 
@@ -99,7 +99,6 @@ nav a:hover {
     background-color: #ff0707;
 }
 
-
 main {
     padding: 2rem;
     text-align: center;
@@ -116,13 +115,11 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #dc1313;
 }
-
 
 .produto {
     display: flex;
@@ -134,7 +131,7 @@ h1 {
 
 .produto img {
     max-width: 100%;
-    max-height: 400px;  
+    max-height: 400px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -147,13 +144,13 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .trocar-imagem {
     position: absolute;
-    top: 10px;  /* Distância do topo da imagem */
-    left: 10px;  /* Distância da borda esquerda da imagem */
+    top: 10px;
+    left: 10px;
     z-index: 10;
 }
 
@@ -172,7 +169,6 @@ h1 {
     background-color: #ff0707;
 }
 
-
 button {
     background-color: #dc1313;
     color: white;
@@ -188,10 +184,10 @@ button:hover {
     background-color: #b11212;
 }
 
-.preco-container{
-    display: flex;  /* Flexbox para alinhar os itens horizontalmente */
-    align-items: center;  /* Alinha os itens no centro verticalmente */
-    justify-content: flex-start;  /* Garante que os itens fiquem à esquerda */
+.preco-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
 }
 
@@ -214,12 +210,9 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     margin: 1rem 0;
-}
-
-.preco-container p {
-    font-size: 1.2rem;
-    font-weight: bold;
+    display: none;  /* Inicialmente oculto */
 }
 
 .estoque-controls button {
@@ -232,12 +225,22 @@ button:hover {
     font-size: 1.2rem;
 }
 
-#novoPrecoInput {
-    font-size: 1rem;
+/* Estilo para os botões de aumentar e diminuir estoque */
+.estoque-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.estoque-btns button {
+    width: 45%;
     padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 80px;
+    font-size: 1.2rem;
+}
+
+.estoque-btns button:first-child {
+    margin-right: 10%; /* Cria um pequeno espaço entre os botões */
 }
 
 /* Descrição e Características */
