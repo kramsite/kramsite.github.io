@@ -30,7 +30,7 @@
                     <input type="file" id="novaImagemInput" accept="image/*" style="display: none;">
                     <button id="trocarImagemBtn">Trocar Imagem</button>
                 </div>
-                <img id="imagemProduto" src="../../../img/acessorios/colar.jpg" alt="imagem do produto">
+                <img id="imagemProduto" src="../../../img/acessorios/brincos.jpg" alt="imagem do produto">
             </div>
             <div class="produto-info">
                 <h2 id="nomeProduto">Brincos</h2>
@@ -40,19 +40,16 @@
                     <li id="caracteristica2">7cm</li>
                 </ul>
 
-                <!-- Preço e edição -->
                 <div class="preco-container">
                     <p id="precoProduto">Preço: R$ <span id="precoValor">50,99</span></p>
                     <input type="text" id="novoPrecoInput" placeholder="Novo Preço" style="display: none; width: 80px;">
-                    <button id="editarPrecoBtn" style="display: none;">Editar</button> <!-- Inicialmente escondido -->
+                    <button id="editarPrecoBtn" style="display: none;">Editar</button> 
                 </div>
 
-                <!-- Botão para mostrar a parte de edição -->
                 <div id="editarBtnContainer">
                     <button id="editarBtn">Editar Informações</button>
                 </div>
 
-                <!-- Seção de edição, inicialmente escondida -->
                 <div class="editar-info" id="editarInfo" style="display: none;">
                     <input type="text" id="novaImagem" placeholder="URL da nova imagem (opcional)">
                     <input type="text" id="novoNome" placeholder="Novo Nome">
@@ -60,7 +57,6 @@
                     <input type="text" id="novaCaracteristica1" placeholder="Nova Característica 1">
                     <input type="text" id="novaCaracteristica2" placeholder="Nova Característica 2">
 
-                    <!-- Quantidade em estoque, inicialmente oculta -->
                     <div id="estoqueContainer" style="display: none;">
                         <button id="menosBtn">-</button>
                         <p id="estoque">Estoque disponível: <span id="quantidade">10</span></p>
@@ -80,18 +76,15 @@
     <script>
         let quantidadeEstoque = 10;
 
-        // Função para atualizar a quantidade de estoque
         function atualizarEstoque() {
             document.getElementById("quantidade").textContent = quantidadeEstoque;
         }
 
-        // Evento para aumentar a quantidade de estoque
         document.getElementById("maisBtn").addEventListener("click", function() {
             quantidadeEstoque++;
             atualizarEstoque();
         });
 
-        // Evento para diminuir a quantidade de estoque
         document.getElementById("menosBtn").addEventListener("click", function() {
             if (quantidadeEstoque > 0) {
                 quantidadeEstoque--;
@@ -99,39 +92,33 @@
             }
         });
 
-        // Exibição e ocultação do campo de estoque, ao editar informações
         document.getElementById("editarBtn").addEventListener("click", function() {
             const editarInfo = document.getElementById("editarInfo");
             const editarPrecoBtn = document.getElementById("editarPrecoBtn");
             const estoqueContainer = document.getElementById("estoqueContainer");
 
-            // Mostrar a seção de edição
-            editarInfo.style.display = "block";  // Torna a seção de edição visível
-            editarPrecoBtn.style.display = "inline-block";  // Torna o botão de "Editar" visível
-            estoqueContainer.style.display = "block";  // Torna o campo de estoque visível dentro da edição
-
-            // Esconde o botão "Editar Informações" após ser clicado
+            editarInfo.style.display = "block";  
+            editarPrecoBtn.style.display = "inline-block";  
+            estoqueContainer.style.display = "block";  
             this.style.display = "none";
         });
 
-        // Evento para editar o preço
         document.getElementById("editarPrecoBtn").addEventListener("click", function() {
             const novoPrecoInput = document.getElementById("novoPrecoInput");
             
             if (novoPrecoInput.style.display === "none") {
-                novoPrecoInput.style.display = "inline";  // Torna o campo de preço editável
-                novoPrecoInput.value = document.getElementById("precoValor").textContent;  // Preenche com o valor atual
+                novoPrecoInput.style.display = "inline";  
+                novoPrecoInput.value = document.getElementById("precoValor").textContent;  
                 novoPrecoInput.focus();
-                this.textContent = "Salvar";  // Muda o texto do botão para "Salvar"
+                this.textContent = "Salvar";  
             } else {
                 const novoPreco = novoPrecoInput.value;
-                document.getElementById("precoValor").textContent = novoPreco;  // Atualiza o valor do preço
-                novoPrecoInput.style.display = "none";  // Esconde o campo de edição do preço
-                this.textContent = "Editar";  // Muda o texto do botão de volta para "Editar"
+                document.getElementById("precoValor").textContent = novoPreco;  
+                novoPrecoInput.style.display = "none";  
+                this.textContent = "Editar"; 
             }
         });
 
-        // Evento para salvar as edições feitas
         document.getElementById("salvarEdicoesBtn").addEventListener("click", function() {
             const novaImagemURL = document.getElementById("novaImagem").value;
             const novoNome = document.getElementById("novoNome").value;
@@ -139,7 +126,6 @@
             const novaCaracteristica1 = document.getElementById("novaCaracteristica1").value;
             const novaCaracteristica2 = document.getElementById("novaCaracteristica2").value;
 
-            // Atualiza as informações na página
             if (novaImagemURL) {
                 document.getElementById("imagemProduto").src = novaImagemURL;
             }
@@ -149,16 +135,14 @@
             document.getElementById("caracteristica1").textContent = novaCaracteristica1;
             document.getElementById("caracteristica2").textContent = novaCaracteristica2;
 
-            // Limpa os campos de edição
             document.getElementById("novaImagem").value = '';
             document.getElementById("novoNome").value = '';
             document.getElementById("novaDescricao").value = '';
             document.getElementById("novaCaracteristica1").value = '';
             document.getElementById("novaCaracteristica2").value = '';
 
-            // Esconde a seção de edição
             document.getElementById("editarInfo").style.display = "none";
-            document.getElementById("editarBtn").style.display = "inline-block";  // Torna o botão "Editar Informações" visível novamente
+            document.getElementById("editarBtn").style.display = "inline-block";  
         });
     </script>
 </body>
